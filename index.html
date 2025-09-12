@@ -14,12 +14,11 @@
       background-color: #000;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* Tab bar sem logo */
     .tab-bar {
       width: 100%;
       background: linear-gradient(to right, #1e1e1e, #2a2a2a);
@@ -34,7 +33,6 @@
       z-index: 1000;
     }
 
-    /* Título apenas (sem logo) */
     .logo-title {
       display: flex;
       align-items: center;
@@ -98,23 +96,23 @@
       margin: 60px auto;
       padding: 40px;
       border: 1px solid #ff0033;
-      border-radius: 20px;
       box-shadow: 0 0 12px rgba(255, 0, 51, 0.2);
-      width: 300px;
+      width: 320px;
       text-align: center;
       background-color: #111;
+      border-radius: 0; /* Sem cantos arredondados */
     }
 
     .button {
       display: block;
-      margin: 15px auto;
+      margin: 10px auto;
       padding: 12px;
       width: 100%;
       background-color: #1a0000;
       border: 2px solid #ff0033;
-      border-radius: 10px;
+      border-radius: 0;
       color: #ff0033;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: bold;
       text-decoration: none;
       transition: 0.3s;
@@ -131,7 +129,7 @@
 </head>
 <body>
 
-  <!-- Tab bar sem logo, só título -->
+  <!-- Tab bar -->
   <div class="tab-bar">
     <div class="logo-title">
       <h1>TROLLTEC</h1>
@@ -143,12 +141,29 @@
     </div>
   </div>
 
-  <!-- Quadro de botões principais -->
+  <!-- Quadro com 20 botões -->
   <div class="container">
+    <!-- Gere 20 botões -->
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 1</a>
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 2</a>
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 3</a>
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 4</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 5</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 6</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 7</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 8</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 9</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 10</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 11</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 12</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 13</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 14</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 15</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 16</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 17</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 18</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 19</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">Botão 20</a>
   </div>
 
 </body>
