@@ -19,18 +19,22 @@
       flex-direction: column;
     }
 
-    /* Barra superior com logo e título à esquerda */
+    /* Tab bar fixa com gradiente e linha neon */
     .tab-bar {
       width: 100%;
-      background-color: #1e1e1e;
+      background: linear-gradient(to right, #1e1e1e, #2a2a2a);
       padding: 10px 30px;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      border-bottom: 1px solid #333;
-      box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+      justify-content: space-between;
+      border-bottom: 1px solid #ff0033;
+      box-shadow: 0 2px 6px rgba(255, 0, 51, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
+    /* Logo + título à esquerda */
     .logo-title {
       display: flex;
       align-items: center;
@@ -49,10 +53,48 @@
       color: #ff0033;
       text-shadow: 0 0 4px #ff0033;
       letter-spacing: 1px;
-      font-family: 'Segoe UI', sans-serif;
     }
 
-    /* Quadro com botões */
+    /* Botões da tab bar */
+    .tab-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .tab-buttons a {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+      border: 1px solid transparent;
+    }
+
+    .scarlet-btn {
+      background-color: #ff0033;
+      color: #000;
+      border: 1px solid #ff0033;
+    }
+
+    .esign-btn {
+      background-color: #222;
+      color: #00ccff;
+      border: 1px solid #00ccff;
+    }
+
+    .jailbreak-btn {
+      background-color: transparent;
+      color: #ffcc00;
+      border: 1px solid #ffcc00;
+    }
+
+    .tab-buttons a:hover {
+      box-shadow: 0 0 10px rgba(255, 0, 51, 0.5);
+      transform: scale(1.05);
+    }
+
+    /* Quadro de botões principais */
     .container {
       margin: 60px auto;
       padding: 40px;
@@ -76,7 +118,7 @@
       font-size: 18px;
       font-weight: bold;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: 0.3s;
       box-shadow: 0 0 8px rgba(255, 0, 51, 0.3);
     }
 
@@ -89,15 +131,20 @@
 </head>
 <body>
 
-  <!-- Tab bar com logo e título alinhados à esquerda -->
+  <!-- Tab bar com logo + botões -->
   <div class="tab-bar">
     <div class="logo-title">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Maçã">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo">
       <h1>TROLLTEC</h1>
+    </div>
+    <div class="tab-buttons">
+      <a href="#" class="scarlet-btn">Scarlet</a>
+      <a href="#" class="esign-btn">Esign</a>
+      <a href="#" class="jailbreak-btn">Jailbreak</a>
     </div>
   </div>
 
-  <!-- Quadro de botões -->
+  <!-- Quadro com botões -->
   <div class="container">
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 1</a>
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 2</a>
