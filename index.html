@@ -19,7 +19,7 @@
       flex-direction: column;
     }
 
-    /* Tab bar fixa com gradiente escuro */
+    /* Tab bar sem logo */
     .tab-bar {
       width: 100%;
       background: linear-gradient(to right, #1e1e1e, #2a2a2a);
@@ -34,27 +34,21 @@
       z-index: 1000;
     }
 
-    /* Logo + Título à esquerda */
+    /* Título apenas (sem logo) */
     .logo-title {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .logo-title img {
-      height: 26px;
-      width: auto;
-    }
-
     .logo-title h1 {
-      font-size: 22px;
+      font-size: 28px;
       font-weight: 300;
       color: #ff0033;
-      text-shadow: 0 0 4px #ff0033;
+      text-shadow: 0 0 5px #ff0033;
       letter-spacing: 1px;
     }
 
-    /* Botões da tab bar à direita */
     .tab-buttons {
       display: flex;
       gap: 12px;
@@ -94,14 +88,12 @@
       transform: scale(1.05);
     }
 
-    /* Animação flutuante para botões */
     @keyframes floatButton {
       0% { transform: translateY(0); }
       50% { transform: translateY(-3px); }
       100% { transform: translateY(0); }
     }
 
-    /* Quadro de botões principais */
     .container {
       margin: 60px auto;
       padding: 40px;
@@ -135,15 +127,13 @@
       color: #000;
       box-shadow: 0 0 20px #ff0033;
     }
-
   </style>
 </head>
 <body>
 
-  <!-- Tab bar com logo e botões -->
+  <!-- Tab bar sem logo, só título -->
   <div class="tab-bar">
     <div class="logo-title">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Apple_logo_red.svg" alt="Maçã Vermelha">
       <h1>TROLLTEC</h1>
     </div>
     <div class="tab-buttons">
@@ -153,7 +143,7 @@
     </div>
   </div>
 
-  <!-- Quadro principal com botões -->
+  <!-- Quadro de botões principais -->
   <div class="container">
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 1</a>
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 2</a>
