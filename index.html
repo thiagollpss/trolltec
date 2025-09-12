@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>TROLLTEC</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 80px;
+      font-weight: bold;
+      color: #00ff66;
+      text-shadow:
+        0 0 8px #00ff66,
+        0 0 16px #00ff66,
+        0 0 32px #00ff66,
+        0 0 64px #00ff66;
+      animation: neonPulse 1.5s infinite alternate;
+    }
+
+    @keyframes neonPulse {
+      from {
+        text-shadow:
+          0 0 8px #00ff66,
+          0 0 16px #00ff66,
+          0 0 32px #00ff66,
+          0 0 64px #00ff66;
+      }
+      to {
+        text-shadow:
+          0 0 4px #00ff66,
+          0 0 8px #00ff66,
+          0 0 16px #00ff66,
+          0 0 32px #00ff66;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>TROLLTEC</h1>
+</body>
+</html>
