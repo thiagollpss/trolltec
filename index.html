@@ -18,85 +18,44 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center; /* centraliza verticalmente */
       padding: 40px 0;
       position: relative;
       overflow-x: hidden;
+      overflow-y: hidden; /* Evita scroll vertical */
+      user-select: none; /* Evita seleção */
     }
 
+    /* Removi barra e botões conforme pedido, então escondi eles */
     .tab-bar {
-      width: 100%;
-      max-width: 360px;
-      background: linear-gradient(to right, #1e1e1e, #2a2a2a);
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #ff0033;
-      position: sticky;
-      top: 0;
-      z-index: 1001;
-      margin-bottom: 20px;
-      box-shadow: none;
+      display: none; /* escondendo barra superior */
     }
 
     .logo-title {
       display: flex;
       align-items: center;
       gap: 8px;
+      justify-content: center;
+      width: 100%;
     }
 
+    /* Título maior e centralizado */
     .logo-title h1 {
-      font-size: 24px;
-      font-weight: 300;
+      font-size: 96px; /* muito maior */
+      font-weight: 900;
       color: #ff0033;
-      text-shadow: 0 0 5px #ff0033;
-      letter-spacing: 1px;
+      text-shadow: 0 0 15px #ff0033;
+      letter-spacing: 8px;
       margin: 0;
+      user-select: none;
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      width: 100%;
     }
 
     .tab-buttons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .tab-buttons a {
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: bold;
-      text-decoration: none;
-      border: 1px solid transparent;
-      transition: 0.3s;
-      background-color: #222;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      white-space: nowrap;
-    }
-
-    .scarlet-btn {
-      background-color: #ff0033;
-      color: #000;
-      border: 1px solid #ff0033;
-    }
-
-    .esign-btn {
-      background-color: #222;
-      color: #00ccff;
-      border: 1px solid #00ccff;
-    }
-
-    .jailbreak-btn {
-      background-color: transparent;
-      color: #ffcc00;
-      border: 1px solid #ffcc00;
-    }
-
-    .tab-buttons a:hover {
-      filter: brightness(1.2);
-      transform: scale(1.05);
-      cursor: pointer;
+      display: none; /* escondendo os botões */
     }
 
     .container {
@@ -104,34 +63,36 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-      background-color: #111;
+      background-color: #3b2e1e; /* tom amadeirado escuro */
       padding: 30px;
-      border: 1px solid #555;
+      border: 1px solid #5a4a33; /* borda amadeirada */
       border-radius: 8px;
       box-sizing: border-box;
       position: relative;
       z-index: 10;
+      box-shadow: 0 4px 8px rgba(90, 74, 51, 0.4);
     }
 
-    /* Botões retangulares */
+    /* Botões retangulares com estilo amadeirado */
     .button {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 60px;
-      background-color: #fff;
-      color: #000;
+      background-color: #d2b48c; /* tom madeira clara */
+      color: #3b2e1e; /* texto em tom madeira escuro */
       font-weight: bold;
       font-size: 18px;
       text-decoration: none;
       border-radius: 8px;
+      border: 2px solid #a67c00; /* borda em tom madeira escura */
       transition: background-color 0.3s, color 0.3s, transform 0.2s;
       user-select: none;
       box-shadow: none;
     }
 
     .button:hover {
-      background-color: #ff0033;
+      background-color: #a67c00; /* tom madeira escuro no hover */
       color: #fff;
       transform: scale(1.05);
       cursor: pointer;
@@ -154,27 +115,20 @@
       top: -10px;
       background: white;
       border-radius: 50%;
-      opacity: 0.4;
-      filter: drop-shadow(0 0 1px white);
+      opacity: 0.2; /* mais fina */
+      filter: drop-shadow(0 0 0.5px white); /* sombra menor */
       user-select: none;
       will-change: transform;
-      width: 3px;
-      height: 3px;
+      width: 2px;  /* flocos menores */
+      height: 2px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Tab bar -->
-  <div class="tab-bar">
-    <div class="logo-title">
-      <h1>TROLLTEC</h1>
-    </div>
-    <div class="tab-buttons">
-      <a href="#" class="scarlet-btn">Scarlet</a>
-      <a href="#" class="esign-btn">Esign</a>
-      <a href="#" class="jailbreak-btn">Jailbreak</a>
-    </div>
+  <!-- Removi a barra e botões, deixei só o título grande -->
+  <div class="logo-title">
+    <h1>TROLLTEC</h1>
   </div>
 
   <!-- Container com botões retangulares -->
@@ -196,7 +150,7 @@
 
   <script>
     const snowContainer = document.getElementById('snowflake');
-    const flakesCount = 50;
+    const flakesCount = 60;
 
     function randomRange(min, max) {
       return Math.random() * (max - min) + min;
@@ -205,10 +159,10 @@
     for (let i = 0; i < flakesCount; i++) {
       const flake = document.createElement('div');
       flake.classList.add('flake');
-      flake.style.opacity = (0.2 + Math.random() * 0.3).toFixed(2);
+      flake.style.opacity = (0.1 + Math.random() * 0.2).toFixed(2); // mais fina
       flake.style.left = `${Math.random() * 100}vw`;
-      flake.style.animationDuration = `${randomRange(8, 18)}s`;
-      flake.style.animationDelay = `${Math.random() * 18}s`;
+      flake.style.animationDuration = `${randomRange(8, 20)}s`;
+      flake.style.animationDelay = `${Math.random() * 20}s`;
       snowContainer.appendChild(flake);
     }
 
@@ -217,7 +171,7 @@
       flakes.forEach(flake => {
         let x = parseFloat(flake.style.left);
         let y = parseFloat(flake.style.top) || 0;
-        let speedY = 0.3;
+        let speedY = 0.25; // queda mais lenta e suave
         let sway = Math.sin(Date.now() / 700 + x) * 10;
 
         y += speedY;
@@ -229,7 +183,7 @@
       requestAnimationFrame(animateFlakes);
     }
 
-    // Inicializa posições
+    // Inicializa posições verticais
     document.querySelectorAll('.flake').forEach(flake => {
       flake.style.top = `${Math.random() * window.innerHeight}px`;
     });
