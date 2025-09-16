@@ -11,8 +11,10 @@
     }
 
     body {
-      background: url('https://img.freepik.com/fotos-gratis/belas-paisagens-do-mundo-subaquatico-fascinante-na-ilha-de-bonaire-caribe_9077318.jpg') no-repeat center center fixed;
+      background-image: url('a1f5c41f-69bb-4274-b9b7-99bc90883c78.png');
       background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       min-height: 100vh;
@@ -22,12 +24,15 @@
       justify-content: center;
       padding: 40px 0;
       position: relative;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: hidden;
       user-select: none;
     }
 
     .logo-title {
       display: flex;
+      align-items: center;
+      gap: 8px;
       justify-content: center;
       width: 100%;
     }
@@ -40,6 +45,7 @@
       letter-spacing: 8px;
       margin: 0;
       user-select: none;
+      position: relative;
       z-index: 10;
       text-align: center;
       width: 100%;
@@ -51,15 +57,14 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       background-color: transparent;
-      padding: 0;
-      border: none;
-      border-radius: 0;
-      box-sizing: border-box;
+      padding: 30px;
+      border-radius: 8px;
       position: relative;
       z-index: 10;
-      box-shadow: none;
+      box-sizing: border-box;
     }
 
+    /* Botões pretos transparentes */
     .button {
       display: flex;
       justify-content: center;
@@ -72,37 +77,39 @@
       text-decoration: none;
       border-radius: 8px;
       border: none;
-      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+      transition: background-color 0.3s, transform 0.2s;
       user-select: none;
       box-shadow: none;
     }
 
     .button:hover {
-      background-color: rgba(255, 0, 51, 0.7);
-      color: #fff;
+      background-color: rgba(0, 0, 0, 0.8);
       transform: scale(1.05);
       cursor: pointer;
     }
 
-    /* Container para as cinzas */
-    #ash-container {
-      pointer-events: none;
+    #snowflake {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;
       overflow: hidden;
-      z-index: 9999;
     }
 
-    .ash {
+    .flake {
       position: absolute;
-      background-color: rgba(120, 120, 120, 0.3);
+      top: -10px;
+      background: #888; /* cor cinza para cinzas */
       border-radius: 50%;
-      filter: blur(1px);
       opacity: 0.3;
+      user-select: none;
       will-change: transform;
+      width: 4px;
+      height: 4px;
+      filter: blur(1px);
     }
   </style>
 </head>
@@ -125,69 +132,51 @@
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 10</a>
   </div>
 
-  <div id="ash-container"></div>
+  <div id="snowflake"></div>
 
   <script>
-    const ashContainer = document.getElementById('ash-container');
-    const ashCount = 60;
+    const snowContainer = document.getElementById('snowflake');
+    const flakesCount = 60;
 
     function randomRange(min, max) {
       return Math.random() * (max - min) + min;
     }
 
-    // Criar cinzas
-    for (let i = 0; i < ashCount; i++) {
-      const ash = document.createElement('div');
-      ash.classList.add('ash');
-      const size = randomRange(2, 5);
-      ash.style.width = size + 'px';
-      ash.style.height = size + 'px';
-      ash.style.left = Math.random() * window.innerWidth + 'px';
-      ash.style.top = Math.random() * window.innerHeight + 'px';
-      ash.style.opacity = (0.1 + Math.random() * 0.3).toFixed(2);
-      ashContainer.appendChild(ash);
-
-      // Guarda dados de animação em cada cinza
-      ash.dataset.speed = randomRange(0.3, 0.7);
-      ash.dataset.sway = randomRange(10, 20);
-      ash.dataset.phase = Math.random() * 2 * Math.PI;
+    for (let i = 0; i < flakesCount; i++) {
+      const flake = document.createElement('div');
+      flake.classList.add('flake');
+      flake.style.opacity = (0.1 + Math.random() * 0.3).toFixed(2);
+      flake.style.left = `${Math.random() * 100}vw`;
+      flake.style.width = `${randomRange(2, 5)}px`;
+      flake.style.height = flake.style.width;
+      flake.style.animationDuration = `${randomRange(6, 15)}s`;
+      flake.style.animationDelay = `${Math.random() * 15}s`;
+      snowContainer.appendChild(flake);
     }
 
-    function animateAsh() {
-      const ashes = document.querySelectorAll('.ash');
-      ashes.forEach(ash => {
-        let top = parseFloat(ash.style.top);
-        let left = parseFloat(ash.style.left);
-        const speed = parseFloat(ash.dataset.speed);
-        const sway = parseFloat(ash.dataset.sway);
-        const phase = parseFloat(ash.dataset.phase);
+    function animateFlakes() {
+      const flakes = document.querySelectorAll('.flake');
+      flakes.forEach(flake => {
+        let x = parseFloat(flake.style.left);
+        let y = parseFloat(flake.style.top) || 0;
+        let speedY = 0.3;
+        let sway = Math.sin(Date.now() / 700 + x) * 10;
 
-        // Queda vertical
-        top += speed;
-        if (top > window.innerHeight) {
-          top = -5;
-          ash.style.left = Math.random() * window.innerWidth + 'px';
-        }
+        y += speedY;
+        if (y > window.innerHeight) y = -10;
 
-        // Movimento lateral suave
-        const swayX = Math.sin(Date.now() / 1000 + phase) * sway * 0.5;
-
-        ash.style.top = top + 'px';
-        ash.style.left = (left + swayX) + 'px';
+        flake.style.top = y + 'px';
+        flake.style.left = (x + sway * 0.01) + 'vw';
       });
-
-      requestAnimationFrame(animateAsh);
+      requestAnimationFrame(animateFlakes);
     }
 
-    animateAsh();
-
-    // Atualiza posição das cinzas no resize da janela
-    window.addEventListener('resize', () => {
-      document.querySelectorAll('.ash').forEach(ash => {
-        ash.style.left = Math.random() * window.innerWidth + 'px';
-        ash.style.top = Math.random() * window.innerHeight + 'px';
-      });
+    // Inicializa posições verticais
+    document.querySelectorAll('.flake').forEach(flake => {
+      flake.style.top = `${Math.random() * window.innerHeight}px`;
     });
+
+    animateFlakes();
   </script>
 </body>
 </html>
