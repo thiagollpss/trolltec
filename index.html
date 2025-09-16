@@ -36,6 +36,7 @@
       top: 0;
       z-index: 1001;
       margin-bottom: 20px;
+      box-shadow: none; /* Remover sombras para ficar certinho */
     }
 
     .logo-title {
@@ -148,10 +149,12 @@
       top: -10px;
       background: white;
       border-radius: 50%;
-      opacity: 0.8;
-      filter: drop-shadow(0 0 2px white);
+      opacity: 0.4; /* Mais translúcido */
+      filter: drop-shadow(0 0 1px white);
       user-select: none;
       will-change: transform;
+      width: 3px;  /* menor tamanho */
+      height: 3px; /* menor tamanho */
     }
   </style>
 </head>
@@ -188,7 +191,7 @@
 
   <script>
     const snowContainer = document.getElementById('snowflake');
-    const flakesCount = 50; // número de flocos
+    const flakesCount = 50;
 
     function randomRange(min, max) {
       return Math.random() * (max - min) + min;
@@ -197,23 +200,21 @@
     for (let i = 0; i < flakesCount; i++) {
       const flake = document.createElement('div');
       flake.classList.add('flake');
-      const size = randomRange(5, 12);
-      flake.style.width = `${size}px`;
-      flake.style.height = `${size}px`;
+      // Agora todos os flocos são 3x3px, mas pode randomizar a opacidade e a velocidade pra variar um pouco
+      flake.style.opacity = (0.2 + Math.random() * 0.3).toFixed(2);
       flake.style.left = `${Math.random() * 100}vw`;
-      flake.style.animationDuration = `${randomRange(5, 15)}s`;
-      flake.style.animationDelay = `${Math.random() * 15}s`;
+      flake.style.animationDuration = `${randomRange(8, 18)}s`;
+      flake.style.animationDelay = `${Math.random() * 18}s`;
       snowContainer.appendChild(flake);
     }
 
-    // Animar os flocos com JS (queda e leve balanço)
     function animateFlakes() {
       const flakes = document.querySelectorAll('.flake');
       flakes.forEach(flake => {
         let x = parseFloat(flake.style.left);
         let y = parseFloat(flake.style.top) || 0;
-        let speedY = parseFloat(flake.style.animationDuration) / 15;
-        let sway = Math.sin(Date.now() / 500 + x) * 20;
+        let speedY = 0.3; // velocidade de queda mais lenta
+        let sway = Math.sin(Date.now() / 700 + x) * 10;
 
         y += speedY;
         if (y > window.innerHeight) y = -10;
