@@ -22,7 +22,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding-top: 80px; /* espaço para a barra */
+      padding-top: 70px; /* espaço para barra */
       position: relative;
       overflow-x: hidden;
       overflow-y: hidden;
@@ -34,18 +34,15 @@
       position: fixed;
       top: 0;
       left: 0;
-      height: 60px;
+      width: 100%; /* barra ponta a ponta */
+      height: 60px; /* altura fixa, pode ajustar */
       background-color: rgba(0, 0, 0, 0.75);
       display: flex;
       align-items: center;
-      padding: 0 20px;
+      padding-left: 20px; /* distancia do título da borda esquerda */
       z-index: 20;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
       user-select: none;
-      width: fit-content; /* adapta ao conteúdo */
-      border-bottom-right-radius: 10px;
-      border-top-right-radius: 10px;
-      max-width: 100vw; /* para não ultrapassar a tela */
     }
 
     .logo-title h1 {
@@ -62,8 +59,6 @@
       letter-spacing: 6px;
       margin: 0;
       user-select: none;
-      position: relative;
-      text-align: left;
       white-space: nowrap; /* evita quebra */
     }
 
