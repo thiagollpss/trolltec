@@ -98,8 +98,8 @@
       cursor: pointer;
     }
 
-    /* Bolas de fogo */
-    #fireball-container {
+    /* Contêiner para as cinzas */
+    #ash-container {
       position: fixed;
       top: 0;
       left: 0;
@@ -110,21 +110,18 @@
       overflow: hidden;
     }
 
-    .fireball {
+    .ash {
       position: absolute;
-      top: -20px;
-      width: 10px;
-      height: 10px;
-      background: radial-gradient(circle at 30% 30%, #ffcc33, #ff6600 70%, #cc3300 90%, transparent 100%);
+      top: -5px;
+      width: 3px;
+      height: 3px;
+      background-color: rgba(120, 120, 120, 0.4);
       border-radius: 50%;
-      box-shadow:
-        0 0 8px 2px rgba(255, 153, 0, 0.7),
-        0 0 15px 5px rgba(255, 102, 0, 0.6),
-        0 0 25px 10px rgba(204, 51, 0, 0.5);
-      opacity: 0.8;
+      opacity: 0.3;
+      filter: blur(1px);
       user-select: none;
       will-change: transform;
-      filter: drop-shadow(0 0 6px #ff6600);
+      box-shadow: 0 0 3px 1px rgba(150, 150, 150, 0.3);
     }
   </style>
 </head>
@@ -149,52 +146,52 @@
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 10</a>
   </div>
 
-  <!-- Contêiner para as bolas de fogo -->
-  <div id="fireball-container"></div>
+  <!-- Contêiner para as cinzas -->
+  <div id="ash-container"></div>
 
   <script>
-    const fireContainer = document.getElementById('fireball-container');
-    const fireballCount = 50;
+    const ashContainer = document.getElementById('ash-container');
+    const ashCount = 70;
 
     function randomRange(min, max) {
       return Math.random() * (max - min) + min;
     }
 
-    for (let i = 0; i < fireballCount; i++) {
-      const fireball = document.createElement('div');
-      fireball.classList.add('fireball');
-      fireball.style.opacity = (0.5 + Math.random() * 0.5).toFixed(2);
-      fireball.style.left = `${Math.random() * 100}vw`;
-      fireball.style.width = `${randomRange(6, 12)}px`;
-      fireball.style.height = fireball.style.width;
-      fireball.style.animationDuration = `${randomRange(6, 12)}s`;
-      fireball.style.animationDelay = `${Math.random() * 12}s`;
-      fireContainer.appendChild(fireball);
+    for (let i = 0; i < ashCount; i++) {
+      const ash = document.createElement('div');
+      ash.classList.add('ash');
+      ash.style.opacity = (0.1 + Math.random() * 0.3).toFixed(2);
+      ash.style.left = `${Math.random() * 100}vw`;
+      ash.style.width = `${randomRange(2, 4)}px`;
+      ash.style.height = ash.style.width;
+      ash.style.animationDuration = `${randomRange(15, 30)}s`;
+      ash.style.animationDelay = `${Math.random() * 30}s`;
+      ashContainer.appendChild(ash);
     }
 
-    function animateFireballs() {
-      const fireballs = document.querySelectorAll('.fireball');
-      fireballs.forEach(fireball => {
-        let x = parseFloat(fireball.style.left);
-        let y = parseFloat(fireball.style.top) || 0;
-        let speedY = 0.5; // velocidade da queda
-        let sway = Math.sin(Date.now() / 500 + x) * 15;
+    function animateAsh() {
+      const ashes = document.querySelectorAll('.ash');
+      ashes.forEach(ash => {
+        let x = parseFloat(ash.style.left);
+        let y = parseFloat(ash.style.top) || 0;
+        let speedY = 0.15; // queda bem lenta
+        let sway = Math.sin(Date.now() / 1000 + x) * 5;
 
         y += speedY;
-        if (y > window.innerHeight) y = -20;
+        if (y > window.innerHeight) y = -5;
 
-        fireball.style.top = y + 'px';
-        fireball.style.left = (x + sway * 0.01) + 'vw';
+        ash.style.top = y + 'px';
+        ash.style.left = (x + sway * 0.01) + 'vw';
       });
-      requestAnimationFrame(animateFireballs);
+      requestAnimationFrame(animateAsh);
     }
 
     // Inicializa posições verticais
-    document.querySelectorAll('.fireball').forEach(fireball => {
-      fireball.style.top = `${Math.random() * window.innerHeight}px`;
+    document.querySelectorAll('.ash').forEach(ash => {
+      ash.style.top = `${Math.random() * window.innerHeight}px`;
     });
 
-    animateFireballs();
+    animateAsh();
   </script>
 </body>
 </html>
