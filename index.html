@@ -11,8 +11,8 @@
     }
 
     body {
-      background-color: #000;
-      color: #fff;
+      background-color: #fff; /* fundo branco */
+      color: #000; /* texto preto */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       min-height: 100vh;
       display: flex;
@@ -26,7 +26,6 @@
       user-select: none; /* Evita seleção */
     }
 
-    /* Removi barra e botões conforme pedido, então escondi eles */
     .tab-bar {
       display: none; /* escondendo barra superior */
     }
@@ -43,7 +42,7 @@
     .logo-title h1 {
       font-size: 96px; /* muito maior */
       font-weight: 900;
-      color: #ff0033;
+      color: #ff0033; /* mantive vermelho */
       text-shadow: 0 0 15px #ff0033;
       letter-spacing: 8px;
       margin: 0;
@@ -64,14 +63,14 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-      background-color: transparent; /* removido cor de fundo */
+      background-color: transparent; /* transparente */
       padding: 0; /* removido padding */
-      border: none; /* removido borda */
-      border-radius: 0; /* removido arredondamento */
+      border: none; /* sem borda */
+      border-radius: 0; /* sem arredondamento */
       box-sizing: border-box;
       position: relative;
       z-index: 10;
-      box-shadow: none; /* removido sombra */
+      box-shadow: none; /* sem sombra */
     }
 
     /* Botões pretos transparentes, sem borda */
@@ -81,19 +80,19 @@
       align-items: center;
       height: 60px;
       background-color: rgba(0, 0, 0, 0.5); /* preto transparente */
-      color: #fff; /* texto branco */
+      color: #fff; /* texto branco para contraste */
       font-weight: bold;
       font-size: 18px;
       text-decoration: none;
       border-radius: 8px;
-      border: none; /* sem borda */
+      border: none;
       transition: background-color 0.3s, color 0.3s, transform 0.2s;
       user-select: none;
       box-shadow: none;
     }
 
     .button:hover {
-      background-color: rgba(255, 0, 51, 0.7); /* fundo vermelho translúcido no hover */
+      background-color: rgba(255, 0, 51, 0.7); /* vermelho translúcido no hover */
       color: #fff;
       transform: scale(1.05);
       cursor: pointer;
@@ -114,10 +113,10 @@
     .flake {
       position: absolute;
       top: -10px;
-      background: white;
+      background: black; /* flocos pretos para destacar no branco */
       border-radius: 50%;
       opacity: 0.2; /* mais fina */
-      filter: drop-shadow(0 0 0.5px white); /* sombra menor */
+      filter: drop-shadow(0 0 0.5px black); /* sombra menor */
       user-select: none;
       will-change: transform;
       width: 2px;  /* flocos menores */
@@ -127,12 +126,12 @@
 </head>
 <body>
 
-  <!-- Removi a barra e botões, deixei só o título grande -->
+  <!-- Título grande -->
   <div class="logo-title">
     <h1>TROLLTEC</h1>
   </div>
 
-  <!-- Container com botões retangulares -->
+  <!-- Container com botões -->
   <div class="container">
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 1</a>
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 2</a>
@@ -160,7 +159,7 @@
     for (let i = 0; i < flakesCount; i++) {
       const flake = document.createElement('div');
       flake.classList.add('flake');
-      flake.style.opacity = (0.1 + Math.random() * 0.2).toFixed(2); // mais fina
+      flake.style.opacity = (0.1 + Math.random() * 0.2).toFixed(2);
       flake.style.left = `${Math.random() * 100}vw`;
       flake.style.animationDuration = `${randomRange(8, 20)}s`;
       flake.style.animationDelay = `${Math.random() * 20}s`;
@@ -172,7 +171,7 @@
       flakes.forEach(flake => {
         let x = parseFloat(flake.style.left);
         let y = parseFloat(flake.style.top) || 0;
-        let speedY = 0.25; // queda mais lenta e suave
+        let speedY = 0.25;
         let sway = Math.sin(Date.now() / 700 + x) * 10;
 
         y += speedY;
@@ -184,7 +183,6 @@
       requestAnimationFrame(animateFlakes);
     }
 
-    // Inicializa posições verticais
     document.querySelectorAll('.flake').forEach(flake => {
       flake.style.top = `${Math.random() * window.innerHeight}px`;
     });
