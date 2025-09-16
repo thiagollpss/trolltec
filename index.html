@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>TROLLTEC</title>
   <style>
     * {
@@ -11,8 +11,8 @@
     }
 
     body {
-      background-color: #000;
-      color: #fff;
+      background-color: #2b1f0b; /* tom de madeira escura */
+      color: #f0e6d2; /* tom claro para texto */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       min-height: 100vh;
       display: flex;
@@ -21,13 +21,13 @@
 
     .tab-bar {
       width: 100%;
-      background: linear-gradient(to right, #1e1e1e, #2a2a2a);
-      padding: 10px 30px;
+      background: linear-gradient(to right, #3c2e0a, #5a4515);
+      padding: 12px 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #ff0033;
-      box-shadow: 0 2px 6px rgba(255, 0, 51, 0.2);
+      border-bottom: 2px solid #6b4c17;
+      box-shadow: 0 2px 6px rgba(91, 65, 22, 0.5);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -40,95 +40,91 @@
     }
 
     .logo-title h1 {
-      font-size: 28px;
-      font-weight: 300;
-      color: #ff0033;
-      text-shadow: 0 0 5px #ff0033;
-      letter-spacing: 1px;
+      font-size: 32px;
+      font-weight: 600;
+      color: #d9b06f;
+      text-shadow: 1px 1px 3px #5a3d0c;
+      letter-spacing: 1.5px;
+      font-family: 'Courier New', Courier, monospace;
     }
 
     .tab-buttons {
       display: flex;
-      gap: 12px;
+      gap: 15px;
     }
 
     .tab-buttons a {
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 700;
       text-decoration: none;
-      border: 1px solid transparent;
-      transition: 0.3s;
-      animation: floatButton 2.5s ease-in-out infinite;
-    }
-
-    .scarlet-btn {
-      background-color: #ff0033;
-      color: #000;
-      border: 1px solid #ff0033;
-    }
-
-    .esign-btn {
-      background-color: #222;
-      color: #00ccff;
-      border: 1px solid #00ccff;
-    }
-
-    .jailbreak-btn {
-      background-color: transparent;
-      color: #ffcc00;
-      border: 1px solid #ffcc00;
+      border: 2px solid transparent;
+      background: linear-gradient(145deg, #5a3e0a, #3f2a05);
+      color: #c6a75a;
+      box-shadow:
+        inset 2px 2px 5px #7b5f1f,
+        inset -2px -2px 6px #3a2504;
+      transition: background 0.4s, color 0.4s, box-shadow 0.4s;
+      font-family: 'Courier New', Courier, monospace;
+      user-select: none;
     }
 
     .tab-buttons a:hover {
-      box-shadow: 0 0 10px rgba(255, 0, 51, 0.5);
-      transform: scale(1.05);
-    }
-
-    @keyframes floatButton {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-3px); }
-      100% { transform: translateY(0); }
+      background: linear-gradient(145deg, #7d5f19, #5c4211);
+      color: #fff2c2;
+      box-shadow:
+        0 0 15px 3px rgba(198, 167, 90, 0.8),
+        inset 2px 2px 5px #8b6d2e,
+        inset -2px -2px 6px #503a0b;
+      cursor: pointer;
     }
 
     .container {
       margin: 60px auto;
       padding: 40px;
-      border: 1px solid #ff0033;
-      box-shadow: 0 0 12px rgba(255, 0, 51, 0.2);
-      width: 320px;
+      border: 2px solid #6b4c17;
+      box-shadow: 0 0 12px rgba(107, 76, 23, 0.6);
+      width: 360px;
       text-align: center;
-      background-color: #111;
-      border-radius: 0; /* Sem cantos arredondados */
+      background: linear-gradient(145deg, #3a2a0a, #5a4513);
+      border-radius: 10px;
+      font-family: 'Courier New', Courier, monospace;
     }
 
     .button {
       display: block;
-      margin: 10px auto;
-      padding: 12px;
+      margin: 15px auto;
+      padding: 20px;
       width: 100%;
-      background-color: #1a0000;
-      border: 2px solid #ff0033;
-      border-radius: 0;
-      color: #ff0033;
-      font-size: 16px;
-      font-weight: bold;
+      background: linear-gradient(145deg, #5e3f0e, #422c07);
+      border: 3px solid #7b5f1f;
+      border-radius: 12px;
+      color: #d9b06f;
+      font-size: 22px;
+      font-weight: 700;
       text-decoration: none;
-      transition: 0.3s;
-      box-shadow: 0 0 8px rgba(255, 0, 51, 0.3);
-      animation: floatButton 3s ease-in-out infinite;
+      box-shadow:
+        inset 4px 4px 8px #7b5f1f,
+        inset -4px -4px 10px #3a2504;
+      transition: background 0.4s, color 0.4s, box-shadow 0.4s, transform 0.3s;
+      font-family: 'Courier New', Courier, monospace;
+      user-select: none;
     }
 
     .button:hover {
-      background-color: #ff0033;
-      color: #000;
-      box-shadow: 0 0 20px #ff0033;
+      background: linear-gradient(145deg, #8c6f29, #6d4c10);
+      color: #fff5d1;
+      box-shadow:
+        0 0 20px 5px rgba(217, 176, 111, 0.9),
+        inset 4px 4px 10px #9b7f3b,
+        inset -4px -4px 12px #5a430f;
+      transform: scale(1.05);
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-
   <!-- Tab bar -->
   <div class="tab-bar">
     <div class="logo-title">
@@ -143,7 +139,6 @@
 
   <!-- Quadro com 20 botões -->
   <div class="container">
-    <!-- Gere 20 botões -->
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 1</a>
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 2</a>
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 3</a>
@@ -155,6 +150,5 @@
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 9</a>
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 10</a>
   </div>
-
 </body>
 </html>
