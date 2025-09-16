@@ -58,41 +58,42 @@
       display: none; /* escondendo os botões */
     }
 
+    /* Container sem borda e sombra */
     .container {
       width: 360px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-      background-color: #3b2e1e; /* tom amadeirado escuro */
-      padding: 30px;
-      border: 1px solid #5a4a33; /* borda amadeirada */
-      border-radius: 8px;
+      background-color: transparent; /* removido cor de fundo */
+      padding: 0; /* removido padding */
+      border: none; /* removido borda */
+      border-radius: 0; /* removido arredondamento */
       box-sizing: border-box;
       position: relative;
       z-index: 10;
-      box-shadow: 0 4px 8px rgba(90, 74, 51, 0.4);
+      box-shadow: none; /* removido sombra */
     }
 
-    /* Botões retangulares com estilo amadeirado */
+    /* Botões pretos transparentes, sem borda */
     .button {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 60px;
-      background-color: #d2b48c; /* tom madeira clara */
-      color: #3b2e1e; /* texto em tom madeira escuro */
+      background-color: rgba(0, 0, 0, 0.5); /* preto transparente */
+      color: #fff; /* texto branco */
       font-weight: bold;
       font-size: 18px;
       text-decoration: none;
       border-radius: 8px;
-      border: 2px solid #a67c00; /* borda em tom madeira escura */
+      border: none; /* sem borda */
       transition: background-color 0.3s, color 0.3s, transform 0.2s;
       user-select: none;
       box-shadow: none;
     }
 
     .button:hover {
-      background-color: #a67c00; /* tom madeira escuro no hover */
+      background-color: rgba(255, 0, 51, 0.7); /* fundo vermelho translúcido no hover */
       color: #fff;
       transform: scale(1.05);
       cursor: pointer;
