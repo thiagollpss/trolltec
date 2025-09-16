@@ -21,9 +21,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* Ajusta para que o conteúdo fique mais no topo */
-      justify-content: flex-start;
-      padding: 20px 0 40px 0;
+      justify-content: flex-start; /* mudou para deixar mais pra cima */
+      padding: 20px 0 40px 0; /* menos padding topo para subir */
       position: relative;
       overflow-x: hidden;
       overflow-y: hidden;
@@ -36,14 +35,22 @@
       gap: 8px;
       justify-content: center;
       width: 100%;
-      margin-bottom: 30px; /* Espaçamento abaixo do título */
+      margin-bottom: 30px; /* adiciona espaço embaixo */
     }
 
     .logo-title h1 {
-      font-size: 48px; /* Menor que antes */
+      font-size: 110px; /* maior que o original */
       font-weight: 900;
-      color: #000000; /* Preto */
-      /* Removi o text-shadow para ficar mais clean */
+      color: #000; /* preto */
+      /* efeito neon preto parecido com o original em vermelho */
+      text-shadow:
+        0 0 10px #000,
+        0 0 20px #000,
+        0 0 30px #000,
+        0 0 40px #000,
+        0 0 50px #000,
+        0 0 60px #000,
+        0 0 70px #000;
       letter-spacing: 8px;
       margin: 0;
       user-select: none;
@@ -99,6 +106,7 @@
       pointer-events: none;
       z-index: 5;
       overflow: hidden;
+      display: none; /* Esconde as cinzas mas mantém o código */
     }
 
     .flake {
