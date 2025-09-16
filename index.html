@@ -11,23 +11,19 @@
     }
 
     body {
-      background-color: #fff; /* fundo branco */
-      color: #000; /* texto preto */
+      background: url('https://img.freepik.com/fotos-gratis/belas-paisagens-do-mundo-subaquatico-fascinante-na-ilha-de-bonaire-caribe_9077318.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center; /* centraliza verticalmente */
+      justify-content: center;
       padding: 40px 0;
       position: relative;
-      overflow-x: hidden;
-      overflow-y: hidden; /* Evita scroll vertical */
-      user-select: none; /* Evita seleção */
-    }
-
-    .tab-bar {
-      display: none; /* escondendo barra superior */
+      overflow: hidden;
+      user-select: none;
     }
 
     .logo-title {
@@ -38,11 +34,10 @@
       width: 100%;
     }
 
-    /* Título maior e centralizado */
     .logo-title h1 {
-      font-size: 96px; /* muito maior */
+      font-size: 96px;
       font-weight: 900;
-      color: #ff0033; /* mantive vermelho */
+      color: #ff0033;
       text-shadow: 0 0 15px #ff0033;
       letter-spacing: 8px;
       margin: 0;
@@ -53,34 +48,28 @@
       width: 100%;
     }
 
-    .tab-buttons {
-      display: none; /* escondendo os botões */
-    }
-
-    /* Container sem borda e sombra */
     .container {
       width: 360px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-      background-color: transparent; /* transparente */
-      padding: 0; /* removido padding */
-      border: none; /* sem borda */
-      border-radius: 0; /* sem arredondamento */
+      background-color: transparent;
+      padding: 0;
+      border: none;
+      border-radius: 0;
       box-sizing: border-box;
       position: relative;
       z-index: 10;
-      box-shadow: none; /* sem sombra */
+      box-shadow: none;
     }
 
-    /* Botões pretos transparentes, sem borda */
     .button {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 60px;
-      background-color: rgba(0, 0, 0, 0.5); /* preto transparente */
-      color: #fff; /* texto branco para contraste */
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
       font-weight: bold;
       font-size: 18px;
       text-decoration: none;
@@ -92,13 +81,12 @@
     }
 
     .button:hover {
-      background-color: rgba(255, 0, 51, 0.7); /* vermelho translúcido no hover */
+      background-color: rgba(255, 0, 51, 0.7);
       color: #fff;
       transform: scale(1.05);
       cursor: pointer;
     }
 
-    /* Contêiner para as cinzas */
     #ash-container {
       position: fixed;
       top: 0;
@@ -127,12 +115,10 @@
 </head>
 <body>
 
-  <!-- Título grande -->
   <div class="logo-title">
     <h1>TROLLTEC</h1>
   </div>
 
-  <!-- Container com botões -->
   <div class="container">
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 1</a>
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 2</a>
@@ -146,7 +132,6 @@
     <a href="https://www.google.com.br" class="button" target="_blank">Botão 10</a>
   </div>
 
-  <!-- Contêiner para as cinzas -->
   <div id="ash-container"></div>
 
   <script>
@@ -174,24 +159,9 @@
       ashes.forEach(ash => {
         let x = parseFloat(ash.style.left);
         let y = parseFloat(ash.style.top) || 0;
-        let speedY = 0.15; // queda bem lenta
+        let speedY = 0.15;
         let sway = Math.sin(Date.now() / 1000 + x) * 5;
 
-        y += speedY;
-        if (y > window.innerHeight) y = -5;
-
-        ash.style.top = y + 'px';
-        ash.style.left = (x + sway * 0.01) + 'vw';
-      });
-      requestAnimationFrame(animateAsh);
-    }
-
-    // Inicializa posições verticais
-    document.querySelectorAll('.ash').forEach(ash => {
-      ash.style.top = `${Math.random() * window.innerHeight}px`;
-    });
-
-    animateAsh();
-  </script>
-</body>
-</html>
+        y += speedY
+::contentReference[oaicite:6]{index=6}
+ 
