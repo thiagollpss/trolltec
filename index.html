@@ -28,8 +28,6 @@
 
     .logo-title {
       display: flex;
-      align-items: center;
-      gap: 8px;
       justify-content: center;
       width: 100%;
     }
@@ -42,7 +40,6 @@
       letter-spacing: 8px;
       margin: 0;
       user-select: none;
-      position: relative;
       z-index: 10;
       text-align: center;
       width: 100%;
@@ -87,29 +84,25 @@
       cursor: pointer;
     }
 
+    /* Container para as cinzas */
     #ash-container {
+      pointer-events: none;
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1000;
+      width: 100vw;
+      height: 100vh;
       overflow: hidden;
+      z-index: 9999;
     }
 
     .ash {
       position: absolute;
-      top: -5px;
-      width: 3px;
-      height: 3px;
-      background-color: rgba(120, 120, 120, 0.4);
+      background-color: rgba(120, 120, 120, 0.3);
       border-radius: 50%;
-      opacity: 0.3;
       filter: blur(1px);
-      user-select: none;
+      opacity: 0.3;
       will-change: transform;
-      box-shadow: 0 0 3px 1px rgba(150, 150, 150, 0.3);
     }
   </style>
 </head>
@@ -136,32 +129,65 @@
 
   <script>
     const ashContainer = document.getElementById('ash-container');
-    const ashCount = 70;
+    const ashCount = 60;
 
     function randomRange(min, max) {
       return Math.random() * (max - min) + min;
     }
 
+    // Criar cinzas
     for (let i = 0; i < ashCount; i++) {
       const ash = document.createElement('div');
       ash.classList.add('ash');
+      const size = randomRange(2, 5);
+      ash.style.width = size + 'px';
+      ash.style.height = size + 'px';
+      ash.style.left = Math.random() * window.innerWidth + 'px';
+      ash.style.top = Math.random() * window.innerHeight + 'px';
       ash.style.opacity = (0.1 + Math.random() * 0.3).toFixed(2);
-      ash.style.left = `${Math.random() * 100}vw`;
-      ash.style.width = `${randomRange(2, 4)}px`;
-      ash.style.height = ash.style.width;
-      ash.style.animationDuration = `${randomRange(15, 30)}s`;
-      ash.style.animationDelay = `${Math.random() * 30}s`;
       ashContainer.appendChild(ash);
+
+      // Guarda dados de animação em cada cinza
+      ash.dataset.speed = randomRange(0.3, 0.7);
+      ash.dataset.sway = randomRange(10, 20);
+      ash.dataset.phase = Math.random() * 2 * Math.PI;
     }
 
     function animateAsh() {
       const ashes = document.querySelectorAll('.ash');
       ashes.forEach(ash => {
-        let x = parseFloat(ash.style.left);
-        let y = parseFloat(ash.style.top) || 0;
-        let speedY = 0.15;
-        let sway = Math.sin(Date.now() / 1000 + x) * 5;
+        let top = parseFloat(ash.style.top);
+        let left = parseFloat(ash.style.left);
+        const speed = parseFloat(ash.dataset.speed);
+        const sway = parseFloat(ash.dataset.sway);
+        const phase = parseFloat(ash.dataset.phase);
 
-        y += speedY
-::contentReference[oaicite:6]{index=6}
- 
+        // Queda vertical
+        top += speed;
+        if (top > window.innerHeight) {
+          top = -5;
+          ash.style.left = Math.random() * window.innerWidth + 'px';
+        }
+
+        // Movimento lateral suave
+        const swayX = Math.sin(Date.now() / 1000 + phase) * sway * 0.5;
+
+        ash.style.top = top + 'px';
+        ash.style.left = (left + swayX) + 'px';
+      });
+
+      requestAnimationFrame(animateAsh);
+    }
+
+    animateAsh();
+
+    // Atualiza posição das cinzas no resize da janela
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.ash').forEach(ash => {
+        ash.style.left = Math.random() * window.innerWidth + 'px';
+        ash.style.top = Math.random() * window.innerHeight + 'px';
+      });
+    });
+  </script>
+</body>
+</html>
