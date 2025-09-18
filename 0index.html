@@ -60,7 +60,7 @@
       margin: 0;
       user-select: none;
       white-space: nowrap;
-      cursor: pointer; /* para indicar que é clicável */
+      cursor: pointer;
     }
 
     .nav-links {
@@ -70,7 +70,7 @@
 
     .nav-links a {
       font-weight: 700;
-      font-size: 16px; /* menor que antes */
+      font-size: 16px;
       text-transform: uppercase;
       text-decoration: none;
       cursor: pointer;
@@ -86,11 +86,11 @@
     }
 
     .subscribe-link {
-      color: #ff0000; /* vermelho */
+      color: #ff0000;
     }
 
     .iptv-link {
-      color: #fff; /* branco */
+      color: #fff;
       text-decoration: line-through;
     }
 
@@ -103,12 +103,12 @@
     }
 
     .container {
-      width: 320px; /* um pouco menor */
+      width: 320px;
       display: grid;
       grid-template-columns: 1fr;
       gap: 20px;
       margin-top: 50px;
-      margin-bottom: 260px; /* espaço para o texto fixo embaixo */
+      margin-bottom: 260px;
       user-select: none;
     }
 
@@ -116,11 +116,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 60px; /* menor */
+      height: 60px;
       background-color: rgba(0, 0, 0, 0.5);
       color: #fff;
       font-weight: bold;
-      font-size: 18px; /* menor */
+      font-size: 18px;
       text-decoration: none;
       border-radius: 12px;
       border: none;
@@ -148,14 +148,14 @@
       line-height: 1.5;
       max-height: 120px;
       user-select: text;
-      overflow: hidden; /* sem rolagem interna */
-      white-space: nowrap; /* para evitar quebra de linha e rolagem */
-      text-overflow: ellipsis; /* texto com "..." se ultrapassar */
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .info-section:hover {
-      overflow-y: auto; /* permite rolagem só quando passar o mouse */
-      white-space: normal; /* permite quebra de linha no hover */
+      overflow-y: auto;
+      white-space: normal;
       max-height: 200px;
     }
 
@@ -188,23 +188,23 @@
     @media (max-width: 480px) {
       nav {
         height: 50px;
-        padding: 0 12px;
+        padding: 0 10px;
       }
 
       .logo-title h1 {
-        font-size: 28px;
-        letter-spacing: 4px;
+        font-size: 22px;
+        letter-spacing: 3px;
       }
 
       .nav-links a {
-        font-size: 14px;
-        margin-left: 8px;
-        padding: 5px 10px;
+        font-size: 12px;
+        margin-left: 10px;
+        padding: 4px 8px;
       }
 
       .separator {
-        height: 16px;
-        margin-left: 8px;
+        height: 14px;
+        margin-left: 10px;
       }
 
       .container {
