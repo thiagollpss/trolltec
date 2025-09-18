@@ -83,33 +83,36 @@
     }
 
     .container {
-      width: 360px;
+      width: 100%;
+      max-width: 600px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      grid-template-columns: 1fr;
+      gap: 30px;
       background-color: transparent;
-      padding: 30px;
+      padding: 40px;
       border-radius: 8px;
       position: relative;
       z-index: 10;
       box-sizing: border-box;
+      justify-items: center;
     }
 
     .button {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 60px;
-      background-color: rgba(0, 0, 0, 0.5);
+      height: 80px;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
       color: #fff;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 26px;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 12px;
       border: none;
       transition: background-color 0.3s, transform 0.2s;
       user-select: none;
-      box-shadow: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     }
 
     .button:hover {
@@ -145,17 +148,17 @@
     /* Responsividade para celulares */
     @media (max-width: 480px) {
       nav {
-        height: 70px; /* mais alto */
+        height: 70px;
         padding: 0 16px;
       }
 
       .logo-title h1 {
-        font-size: 48px; /* maior */
+        font-size: 48px;
         letter-spacing: 8px;
       }
 
       .buy-iptv {
-        font-size: 28px; /* maior */
+        font-size: 28px;
       }
 
       .container {
@@ -166,8 +169,8 @@
       }
 
       .button {
-        font-size: 22px; /* maior */
-        height: 70px; /* maior */
+        font-size: 22px;
+        height: 70px;
       }
     }
   </style>
@@ -184,16 +187,10 @@
   </nav>
 
   <div class="container">
-    <a href="https://www.google.com.br" class="button" target="_blank">Botão 1</a>
-    <a href="https://www.google.com.br" class="button" target="_blank">Botão 2</a>
-    <a href="https://www.google.com.br" class="button" target="_blank">Botão 3</a>
-    <a href="https://www.google.com.br" class="button" target="_blank">Botão 4</a>
-    <a href="https://www.google.com.br" class="button" target="_blank">Botão 5</a>
-    <a href="https://www.google.com.br" class="button" target="_blank">Botão 6</a>
-    <a href="https://www.google.com.br" class="button" target="_blank">Botão 7</a>
-    <a href="https://www.google.com.br" class="button" target="_blank">Botão 8</a>
-    <a href="https://www.google.com.br" class="button" target="_blank">Botão 9</a>
-    <a href="https://www.google.com.br" class="button" target="_blank">Botão 10</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">🌿 Número 1</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">🌿 Número 2</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">🌿 Número 3</a>
+    <a href="https://www.google.com.br" class="button" target="_blank">🌿 Número 4</a>
   </div>
 
   <div id="snowflake"></div>
