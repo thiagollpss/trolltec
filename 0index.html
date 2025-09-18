@@ -96,6 +96,7 @@
       border-radius: 10px;
       text-decoration: none;
       transition: background-color 0.3s, transform 0.2s;
+      cursor: pointer;
     }
 
     .button:hover {
@@ -135,6 +136,39 @@
       justify-content: center;
     }
 
+    dialog {
+      border: none;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 90vw;
+      background-color: rgba(0, 0, 0, 0.95);
+      color: #fff;
+    }
+
+    .dialog-button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff0033;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dialog-button:hover {
+      background-color: #cc002a;
+    }
+
+    .close-btn {
+      background-color: #444;
+      margin-top: 20px;
+    }
+
     /* Responsivo */
     @media (max-width: 480px) {
       .logo-title h1 {
@@ -172,10 +206,34 @@
   </nav>
 
   <div class="container">
-    <a href="#" class="button">Botão 1</a>
-    <a href="#" class="button">Botão 2</a>
-    <a href="#" class="button">Botão 3</a>
+    <button class="button" onclick="document.getElementById('dialog1').showModal()">Botão 1</button>
+    <button class="button" onclick="document.getElementById('dialog2').showModal()">Botão 2</button>
+    <button class="button" onclick="document.getElementById('dialog3').showModal()">Botão 3</button>
   </div>
+
+  <!-- Dialog 1 -->
+  <dialog id="dialog1">
+    <h3>Opções do Botão 1</h3>
+    <button class="dialog-button">Ação 1</button>
+    <button class="dialog-button">Ação 2</button>
+    <button class="dialog-button close-btn" onclick="document.getElementById('dialog1').close()">Fechar</button>
+  </dialog>
+
+  <!-- Dialog 2 -->
+  <dialog id="dialog2">
+    <h3>Opções do Botão 2</h3>
+    <button class="dialog-button">Abrir Site</button>
+    <button class="dialog-button">Compartilhar</button>
+    <button class="dialog-button close-btn" onclick="document.getElementById('dialog2').close()">Fechar</button>
+  </dialog>
+
+  <!-- Dialog 3 -->
+  <dialog id="dialog3">
+    <h3>Mais opções</h3>
+    <button class="dialog-button">Ver Tutorial</button>
+    <button class="dialog-button">Baixar App</button>
+    <button class="dialog-button close-btn" onclick="document.getElementById('dialog3').close()">Fechar</button>
+  </dialog>
 
   <section class="info-section">
     <h2>Sobre o canal Trolltec e o mundo iOS</h2>
