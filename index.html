@@ -21,12 +21,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
       padding-top: 70px; /* espaço para barra */
       position: relative;
-      overflow-x: hidden;
       user-select: none;
-      padding-bottom: 160px; /* espaço para texto e footer fixos */
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     nav {
@@ -40,7 +39,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 20px;
-      z-index: 1000;
+      z-index: 100;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
       user-select: none;
     }
@@ -62,54 +61,36 @@
       white-space: nowrap;
     }
 
-    .nav-right {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 25px;
-      user-select: none;
     }
 
-    .buy-iptv {
+    .nav-links a {
       font-weight: 700;
       font-size: 20px;
-      color: #fff; /* branco neon */
-      text-shadow:
-        0 0 6px #fff,
-        0 0 12px #eee,
-        0 0 18px #ccc,
-        0 0 24px #bbb;
-      text-decoration: none;
-      user-select: none;
-      white-space: nowrap;
       text-transform: uppercase;
+      text-decoration: none;
       cursor: pointer;
-      padding-right: 20px;
-      border-right: 2px solid #555; /* linha de divisão */
-      transition: transform 0.2s;
-    }
-    .buy-iptv:hover {
-      transform: scale(1.1);
+      user-select: none;
+      margin-left: 12px;
     }
 
-    .subscribe-channel {
-      font-weight: 700;
-      font-size: 20px;
-      color: #ff0000; /* vermelho neon */
-      text-shadow:
-        0 0 6px #ff0000,
-        0 0 12px #cc0000,
-        0 0 18px #aa0000,
-        0 0 24px #880000;
-      text-decoration: none;
-      user-select: none;
-      white-space: nowrap;
-      text-transform: uppercase;
-      cursor: pointer;
-      padding-left: 20px;
-      transition: transform 0.2s;
+    .subscribe-link {
+      color: #ff0000; /* vermelho */
     }
-    .subscribe-channel:hover {
-      transform: scale(1.1);
+
+    .iptv-link {
+      color: #fff; /* branco */
+      text-decoration: line-through;
+    }
+
+    .separator {
+      width: 1px;
+      height: 24px;
+      background-color: #fff;
+      opacity: 0.5;
+      margin-left: 12px;
     }
 
     .container {
@@ -117,12 +98,8 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 25px;
-      background-color: transparent;
-      padding: 30px 0;
-      border-radius: 8px;
-      position: relative;
-      z-index: 10;
-      box-sizing: border-box;
+      margin-top: 50px;
+      margin-bottom: 300px; /* espaço para o texto fixo embaixo */
       user-select: none;
     }
 
@@ -130,53 +107,45 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 70px;
+      height: 80px;
       background-color: rgba(0, 0, 0, 0.5);
       color: #fff;
       font-weight: bold;
-      font-size: 22px;
+      font-size: 24px;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 12px;
       border: none;
       transition: background-color 0.3s, transform 0.2s;
-      user-select: none;
       box-shadow: none;
-      cursor: pointer;
+      user-select: none;
     }
 
     .button:hover {
       background-color: rgba(0, 0, 0, 0.8);
       transform: scale(1.05);
+      cursor: pointer;
     }
 
-    .text-block {
-      background-color: rgba(0, 0, 0, 0.75);
-      width: 95vw;
-      max-width: 1100px;
-      margin: 30px auto 0;
+    .info-section {
+      position: fixed;
+      bottom: 60px;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0,0,0,0.85);
       padding: 30px 40px;
-      border-radius: 10px;
-      box-shadow:
-        0 0 15px rgba(255, 0, 51, 0.8);
-      user-select: text;
+      box-sizing: border-box;
       color: #eee;
       font-size: 18px;
       line-height: 1.6;
-      white-space: pre-wrap;
-      position: fixed;
-      bottom: 50px; /* acima do footer */
-      left: 50%;
-      transform: translateX(-50%);
-      max-height: 100px;
+      max-height: 200px;
       overflow-y: auto;
-      z-index: 1000;
-      background-clip: padding-box;
+      user-select: text;
     }
 
-    .text-block h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
+    .info-section h2 {
       color: #ff0033;
+      margin-bottom: 16px;
+      font-size: 26px;
       text-shadow:
         0 0 6px #ff0033,
         0 0 12px #ff0000;
@@ -185,19 +154,37 @@
     footer {
       position: fixed;
       bottom: 0;
+      left: 0;
       width: 100%;
-      text-align: center;
-      padding: 15px 0;
-      background-color: rgba(0, 0, 0, 0.75);
-      font-size: 14px;
-      color: #aaa;
+      height: 40px;
+      background-color: rgba(0,0,0,0.9);
+      color: #888;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       user-select: none;
-      z-index: 1000;
-      box-shadow: inset 0 1px 4px rgba(255, 255, 255, 0.1);
+      z-index: 150;
     }
 
     /* Responsividade para celulares */
     @media (max-width: 480px) {
+      .container {
+        width: 95vw;
+        gap: 25px;
+      }
+
+      .button {
+        font-size: 28px;
+        height: 100px;
+      }
+
+      .info-section {
+        font-size: 16px;
+        padding: 20px 20px;
+        max-height: 250px;
+      }
+
       nav {
         height: 70px;
         padding: 0 16px;
@@ -208,37 +195,14 @@
         letter-spacing: 8px;
       }
 
-      .buy-iptv {
-        font-size: 28px;
-        padding-right: 15px;
-        border-right: 2px solid #555;
-      }
-
-      .subscribe-channel {
-        font-size: 28px;
-        padding-left: 15px;
-      }
-
-      .container {
-        width: 95vw;
-        padding: 0;
-        gap: 25px;
-      }
-
-      .button {
-        font-size: 26px;
-        height: 90px;
-      }
-
-      .text-block {
-        font-size: 16px;
-        padding: 20px 15px;
-        max-height: 120px;
-        bottom: 60px;
-      }
-
-      .text-block h2 {
+      .nav-links a {
         font-size: 24px;
+        margin-left: 18px;
+      }
+
+      .separator {
+        height: 28px;
+        margin-left: 18px;
       }
     }
   </style>
@@ -249,41 +213,34 @@
     <div class="logo-title">
       <h1>TROLLTEC</h1>
     </div>
-    <div class="nav-right">
-      <a href="https://trolliptv.com.br" class="buy-iptv" target="_blank" rel="noopener noreferrer" title="Assinar IPTV">
-        ASSINAR IPTV
-      </a>
-      <a href="https://www.youtube.com/TROLLTEC" class="subscribe-channel" target="_blank" rel="noopener noreferrer" title="Inscreva-se no canal">
-        INSCREVA-SE NO CANAL
-      </a>
+    <div class="nav-links">
+      <a href="https://youtube.com/@trolltec?si=0Wjpu52Jty9CjzgA" target="_blank" rel="noopener noreferrer" class="subscribe-link">INSCRIÇÃO</a>
+      <div class="separator"></div>
+      <a href="https://trolliptv.com.br" target="_blank" rel="noopener noreferrer" class="iptv-link">ASSINAR IPTV</a>
     </div>
   </nav>
 
   <div class="container">
-    <a href="https://www.google.com" class="button" target="_blank" rel="noopener noreferrer">Botão 1</a>
-    <a href="https://www.google.com" class="button" target="_blank" rel="noopener noreferrer">Botão 2</a>
-    <a href="https://www.google.com" class="button" target="_blank" rel="noopener noreferrer">Botão 3</a>
+    <a href="https://www.google.com" class="button" target="_blank">Botão 1</a>
+    <a href="https://www.google.com" class="button" target="_blank">Botão 2</a>
+    <a href="https://www.google.com" class="button" target="_blank">Botão 3</a>
   </div>
 
-  <div class="text-block">
+  <section class="info-section">
     <h2>Sobre o canal Trolltec e informações iOS</h2>
     <p>
-Bem-vindo ao universo Trolltec, onde você encontra tudo sobre assinaturas, jailbreak, iPhones e o mundo iOS em geral.
-
-Assinaturas de IPTV, apps e serviços são uma maneira prática e acessível de aproveitar conteúdos variados diretamente no seu dispositivo, sem complicações.
-
-O jailbreak é uma prática que permite desbloquear o sistema iOS para instalar aplicativos e personalizações não autorizadas pela Apple. Isso traz liberdade, mas também requer cuidado e conhecimento para evitar riscos à segurança.
-
-O iPhone, um dos smartphones mais desejados do mundo, oferece uma experiência fluida, mas o ecossistema fechado da Apple pode limitar algumas personalizações, que o jailbreak busca contornar.
-
-No canal Trolltec, compartilhamos dicas, tutoriais e novidades sobre como aproveitar ao máximo seu dispositivo, além de análises e conteúdos exclusivos para quem quer dominar o mundo iOS.
-
-Fique ligado para atualizações constantes e conteúdo de qualidade, feito para usuários que buscam explorar todas as possibilidades que a tecnologia Apple oferece.
+      Bem-vindo ao universo Trolltec, onde tecnologia e inovação se encontram para transformar sua experiência com dispositivos iOS. Nosso canal aborda tudo sobre assinaturas, jailbreak, personalização e truques para iPhone, iPad e outros gadgets Apple. 
     </p>
-  </div>
+    <p>
+      Descubra tutoriais detalhados para liberar todo o potencial do seu dispositivo, entender os riscos e benefícios do jailbreak, e aproveitar ao máximo os serviços de IPTV e aplicativos exclusivos. Além disso, trazemos notícias e atualizações do mundo Apple, para que você esteja sempre informado.
+    </p>
+    <p>
+      Se você é apaixonado por tecnologia, quer otimizar seu uso do iOS ou simplesmente ficar por dentro das últimas novidades, Trolltec é seu canal de referência. Inscreva-se para não perder nenhum conteúdo e participe da comunidade.
+    </p>
+  </section>
 
   <footer>
-    © 2025 Trolltec. Todos os direitos reservados.
+    &copy; 2025 Trolltec
   </footer>
 
 </body>
