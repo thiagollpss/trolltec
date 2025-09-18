@@ -61,6 +61,12 @@
       white-space: nowrap;
     }
 
+    .nav-right {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
     .buy-iptv {
       font-weight: 700;
       font-size: 20px;
@@ -78,6 +84,26 @@
       transition: transform 0.2s;
     }
     .buy-iptv:hover {
+      transform: scale(1.1);
+    }
+
+    .subscribe-channel {
+      font-weight: 700;
+      font-size: 20px;
+      color: #fff; /* branco neon */
+      text-shadow:
+        0 0 6px #fff,
+        0 0 12px #eee,
+        0 0 18px #ccc,
+        0 0 24px #bbb;
+      text-decoration: none;
+      user-select: none;
+      white-space: nowrap;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .subscribe-channel:hover {
       transform: scale(1.1);
     }
 
@@ -172,6 +198,10 @@
         font-size: 28px;
       }
 
+      .subscribe-channel {
+        font-size: 28px;
+      }
+
       .container {
         width: 95vw;
         padding: 0;
@@ -201,9 +231,14 @@
     <div class="logo-title">
       <h1>TROLLTEC</h1>
     </div>
-    <a href="https://trolliptv.com.br" class="buy-iptv" target="_blank" rel="noopener noreferrer" title="Assinar IPTV">
-      ASSINAR IPTV
-    </a>
+    <div class="nav-right">
+      <a href="https://trolliptv.com.br" class="buy-iptv" target="_blank" rel="noopener noreferrer" title="Assinar IPTV">
+        ASSINAR IPTV
+      </a>
+      <a href="https://www.youtube.com/TROLLTEC" class="subscribe-channel" target="_blank" rel="noopener noreferrer" title="Inscreva-se no canal">
+        INSCREVA-SE NO CANAL
+      </a>
+    </div>
   </nav>
 
   <div class="container">
