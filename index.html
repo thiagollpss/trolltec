@@ -22,7 +22,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding-top: 70px; /* espaço para barra */
+      padding-top: 70px;
       position: relative;
       overflow-x: hidden;
       overflow-y: hidden;
@@ -145,7 +145,60 @@
       filter: blur(1px);
     }
 
-    /* Responsividade para celulares */
+    /* MODAL */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .modal-content {
+      background: #111;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-content h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .modal-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .modal-buttons button {
+      padding: 12px;
+      font-size: 18px;
+      background-color: #222;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .modal-buttons button:hover {
+      background-color: #444;
+    }
+
+    .close-modal {
+      margin-top: 20px;
+      background-color: #ff0033;
+    }
+
+    /* Responsivo */
     @media (max-width: 480px) {
       nav {
         height: 70px;
@@ -187,10 +240,22 @@
   </nav>
 
   <div class="container">
-    <a href="https://www.google.com.br" class="button" target="_blank">🌿 Número 1</a>
-    <a href="https://www.google.com.br" class="button" target="_blank">🌿 Número 2</a>
-    <a href="https://www.google.com.br" class="button" target="_blank">🌿 Número 3</a>
-    <a href="https://www.google.com.br" class="button" target="_blank">🌿 Número 4</a>
+    <button class="button" onclick="openModal(1)">🌿 Número 1</button>
+    <button class="button" onclick="openModal(2)">🌿 Número 2</button>
+    <button class="button" onclick="openModal(3)">🌿 Número 3</button>
+    <button class="button" onclick="openModal(4)">🌿 Número 4</button>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2 id="modal-title">Título</h2>
+      <div class="modal-buttons">
+        <button onclick="alert('Você clicou na Opção A')">Opção A</button>
+        <button onclick="alert('Você clicou na Opção B')">Opção B</button>
+        <button onclick="alert('Você clicou na Opção C')">Opção C</button>
+        <button class="close-modal" onclick="closeModal()">Fechar</button>
+      </div>
+    </div>
   </div>
 
   <div id="snowflake"></div>
@@ -237,6 +302,23 @@
     });
 
     animateFlakes();
+
+    // MODAL
+    function openModal(buttonNumber) {
+      document.getElementById('modal').style.display = 'flex';
+      document.getElementById('modal-title').innerText = `Você clicou no Número ${buttonNumber}`;
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    window.addEventListener('click', function(e) {
+      const modal = document.getElementById('modal');
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
   </script>
 </body>
 </html>
