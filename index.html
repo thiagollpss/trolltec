@@ -78,6 +78,7 @@
       cursor: pointer;
       transition: transform 0.2s;
     }
+
     .buy-iptv:hover {
       transform: scale(1.1);
     }
@@ -145,60 +146,7 @@
       filter: blur(1px);
     }
 
-    /* MODAL */
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.7);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 100;
-    }
-
-    .modal-content {
-      background: #111;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-    }
-
-    .modal-content h2 {
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-
-    .modal-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .modal-buttons button {
-      padding: 12px;
-      font-size: 18px;
-      background-color: #222;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-
-    .modal-buttons button:hover {
-      background-color: #444;
-    }
-
-    .close-modal {
-      margin-top: 20px;
-      background-color: #ff0033;
-    }
-
-    /* Responsivo */
+    /* Responsividade para celulares */
     @media (max-width: 480px) {
       nav {
         height: 70px;
@@ -240,22 +188,10 @@
   </nav>
 
   <div class="container">
-    <button class="button" onclick="openModal(1)"> ASSINATURAS E INSTALAÇÕES</button>
-    <button class="button" onclick="openModal(2)"> APPS DE STREAMINGS</button>
-    <button class="button" onclick="openModal(3)"> CANAL DO YOUTUBE</button>
-    <button class="button" onclick="openModal(4)"> GRUPO DO WHATSAPP</button>
-  </div>
-
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <h2 id="modal-title">Título</h2>
-      <div class="modal-buttons">
-        <button onclick="alert('Você clicou na Opção A')">ESIGN khoindvn </button>
-        <button onclick="alert('Você clicou na Opção B')">TROLLSTORE</button>
-        <button onclick="alert('Você clicou na Opção C')">ALTSTORE</button>
-        <button class="close-modal" onclick="closeModal()">Fechar</button>
-      </div>
-    </div>
+    <a href="assinaturas.html" class="button">🌿 Assinaturas</a>
+    <a href="jailbreak.html" class="button">🌿 Jailbreak iOS</a>
+    <a href="streamings.html" class="button">🌿 Streamings</a>
+    <a href="https://chat.whatsapp.com/IKlVfYJIqN4E7AdqB5yk3E" class="button" target="_blank" rel="noopener noreferrer">🌿 Grupo WhatsApp</a>
   </div>
 
   <div id="snowflake"></div>
@@ -302,23 +238,6 @@
     });
 
     animateFlakes();
-
-    // MODAL
-    function openModal(buttonNumber) {
-      document.getElementById('modal').style.display = 'flex';
-      document.getElementById('modal-title').innerText = `Você clicou no Número ${buttonNumber}`;
-    }
-
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
-    }
-
-    window.addEventListener('click', function(e) {
-      const modal = document.getElementById('modal');
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
   </script>
 </body>
 </html>
