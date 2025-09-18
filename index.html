@@ -24,8 +24,7 @@
       justify-content: flex-start;
       padding-top: 70px;
       position: relative;
-      overflow-x: hidden;
-      overflow-y: hidden;
+      overflow-y: auto; /* permite rolagem vertical */
       user-select: none;
     }
 
@@ -65,12 +64,12 @@
     .buy-iptv {
       font-weight: 700;
       font-size: 20px;
-      color: #ffff00; /* amarelo neon */
+      color: #ffffff; /* branco neon */
       text-shadow:
-        0 0 6px #ffff00,
-        0 0 12px #ffff00,
-        0 0 18px #ffff00,
-        0 0 24px #ffff00;
+        0 0 6px #fff,
+        0 0 12px #fff,
+        0 0 18px #fff,
+        0 0 24px #fff;
       text-decoration: none;
       user-select: none;
       white-space: nowrap;
@@ -115,6 +114,7 @@
       z-index: 10;
       box-sizing: border-box;
       margin-top: 40px;
+      user-select:none;
     }
 
     .button {
@@ -143,13 +143,16 @@
     .info-text-container {
       width: 90vw;
       max-width: 960px;
-      background-color: rgba(0, 0, 0, 0.75);
+      background-color: rgba(0, 0, 0, 0.85);
       border-radius: 12px;
       padding: 30px 40px;
-      margin-top: 40px;
+      margin: 40px 0 60px 0;
       box-sizing: border-box;
       color: #eee;
       user-select: text;
+      height: 350px; /* altura fixa pra ativar scroll */
+      overflow-y: auto;
+      line-height: 1.6;
     }
 
     .info-text-container h2 {
@@ -159,11 +162,11 @@
       text-shadow:
         0 0 8px #ff0033,
         0 0 16px #ff0000;
+      user-select:none;
     }
 
     .info-text-container p {
       font-size: 18px;
-      line-height: 1.6;
       white-space: pre-line;
     }
 
@@ -220,6 +223,7 @@
       }
 
       .info-text-container {
+        height: 400px;
         padding: 20px 15px;
         font-size: 16px;
       }
@@ -247,12 +251,12 @@
   </nav>
 
   <div class="container">
-    <a href="https://www.google.com" class="button" target="_blank" rel="noopener noreferrer">1</a>
-    <a href="https://www.google.com" class="button" target="_blank" rel="noopener noreferrer">2</a>
-    <a href="https://www.google.com" class="button" target="_blank" rel="noopener noreferrer">3</a>
+    <a href="https://www.google.com" class="button" target="_blank" rel="noopener noreferrer">Botão 1</a>
+    <a href="https://www.google.com" class="button" target="_blank" rel="noopener noreferrer">Botão 2</a>
+    <a href="https://www.google.com" class="button" target="_blank" rel="noopener noreferrer">Botão 3</a>
   </div>
 
-  <div class="info-text-container">
+  <div class="info-text-container" tabindex="0" aria-label="Informações sobre o canal Trolltec e informações iOS">
     <h2>Sobre o canal Trolltec e informações iOS</h2>
     <p>
       O universo de assinaturas, jailbreak e iPhone é vasto e cheio de possibilidades para quem deseja explorar o máximo do seu dispositivo Apple. No canal Trolltec, você encontrará conteúdos exclusivos que abordam desde as melhores opções de assinaturas IPTV, dicas essenciais para realizar jailbreak com segurança, até tutoriais e análises para personalizar e otimizar seu iPhone.
