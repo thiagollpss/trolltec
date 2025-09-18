@@ -25,7 +25,7 @@
       padding-top: 70px;
       position: relative;
       overflow-x: hidden;
-      overflow-y: hidden;
+      overflow-y: auto; /* Permite scroll para textos longos */
       user-select: none;
     }
 
@@ -62,9 +62,15 @@
       white-space: nowrap;
     }
 
-    .buy-iptv {
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-link {
       font-weight: 700;
-      font-size: 20px;
+      font-size: 18px;
       color: #ff0033;
       text-shadow:
         0 0 6px #ff0033,
@@ -79,7 +85,7 @@
       transition: transform 0.2s;
     }
 
-    .buy-iptv:hover {
+    .nav-link:hover {
       transform: scale(1.1);
     }
 
@@ -90,7 +96,7 @@
       grid-template-columns: 1fr;
       gap: 30px;
       background-color: transparent;
-      padding: 40px;
+      padding: 40px 20px 20px 20px;
       border-radius: 8px;
       position: relative;
       z-index: 10;
@@ -114,6 +120,7 @@
       transition: background-color 0.3s, transform 0.2s;
       user-select: none;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      text-align: center;
     }
 
     .button:hover {
@@ -146,6 +153,30 @@
       filter: blur(1px);
     }
 
+    /* Área de texto explicativo */
+    .info-section {
+      max-width: 600px;
+      background-color: rgba(0,0,0,0.55);
+      border-radius: 12px;
+      padding: 24px 30px;
+      margin-top: 40px;
+      color: #eee;
+      font-size: 18px;
+      line-height: 1.6;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      user-select: text;
+    }
+
+    .info-section h2 {
+      color: #ff0033;
+      font-size: 28px;
+      margin-bottom: 16px;
+      text-align: center;
+      text-shadow:
+        0 0 5px #ff0033,
+        0 0 10px #ff0000;
+    }
+
     /* Responsividade para celulares */
     @media (max-width: 480px) {
       nav {
@@ -158,19 +189,33 @@
         letter-spacing: 8px;
       }
 
-      .buy-iptv {
-        font-size: 30px;
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-link {
+        font-size: 22px;
       }
 
       .container {
         width: 95vw;
-        padding: 30px;
+        padding: 30px 16px 20px 16px;
         gap: 30px;
       }
 
       .button {
         font-size: 28px;
         height: 90px;
+      }
+
+      .info-section {
+        font-size: 20px;
+        padding: 30px 20px;
+        margin-top: 50px;
+      }
+
+      .info-section h2 {
+        font-size: 32px;
       }
     }
   </style>
@@ -181,9 +226,10 @@
     <div class="logo-title">
       <h1>TROLLTEC</h1>
     </div>
-    <a href="https://trolliptv.com.br" class="buy-iptv" target="_blank" rel="noopener noreferrer" title="Assinar IPTV">
-      ASSINAR IPTV
-    </a>
+    <div class="nav-links">
+      <a href="https://trolliptv.com.br" class="nav-link" target="_blank" rel="noopener noreferrer" title="Assinar IPTV">ASSINAR IPTV</a>
+      <a href="https://youtube.com/TROLLTEC" class="nav-link" target="_blank" rel="noopener noreferrer" title="Inscreva-se no Canal">INSCRIÇÃO NO CANAL</a>
+    </div>
   </nav>
 
   <div class="container">
@@ -192,6 +238,34 @@
     <a href="streamings.html" class="button">Streamings</a>
     <a href="https://chat.whatsapp.com/IKlVfYJIqN4E7AdqB5yk3E" class="button" target="_blank" rel="noopener noreferrer">Grupo WhatsApp</a>
   </div>
+
+  <section class="info-section">
+    <h2>Assinaturas</h2>
+    <p>
+      As assinaturas oferecidas pela TROLLTEC são pensadas para trazer a melhor experiência possível para nossos usuários, com acesso a IPTV, canais exclusivos e serviços que garantem entretenimento de alta qualidade 24 horas por dia. Com planos flexíveis, você pode escolher a opção que melhor se adapta às suas necessidades, com suporte dedicado e atualizações constantes.
+    </p>
+  </section>
+
+  <section class="info-section">
+    <h2>Jailbreak iOS</h2>
+    <p>
+      O Jailbreak iOS é uma maneira de liberar o máximo potencial do seu iPhone ou iPad, permitindo a instalação de aplicativos, ajustes e modificações que a Apple não permite oficialmente. Nossa equipe oferece guias completos e ferramentas seguras para realizar o processo, garantindo maior personalização e controle total do seu dispositivo iOS.
+    </p>
+  </section>
+
+  <section class="info-section">
+    <h2>iPhone e Tecnologia</h2>
+    <p>
+      Somos apaixonados por tecnologia, especialmente pelo universo Apple. Aqui, você encontra dicas, tutoriais e novidades sobre iPhone, iPad e todo o ecossistema da Apple, além de informações importantes para melhorar seu uso diário, proteger sua privacidade e tirar o máximo proveito do seu dispositivo.
+    </p>
+  </section>
+
+  <section class="info-section">
+    <h2>Streamings</h2>
+    <p>
+      Com os nossos serviços de streaming, você terá acesso facilitado a uma enorme variedade de conteúdos, como filmes, séries, esportes e muito mais. Garantimos uma navegação estável e fluida, com links sempre atualizados para que você aproveite seu entretenimento favorito sem interrupções.
+    </p>
+  </section>
 
   <div id="snowflake"></div>
 
