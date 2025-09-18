@@ -21,11 +21,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-start;
       padding-top: 70px;
       position: relative;
-      user-select: none;
       overflow-x: hidden;
-      overflow-y: auto;
+      overflow-y: hidden;
+      user-select: none;
     }
 
     nav {
@@ -61,168 +62,170 @@
       white-space: nowrap;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .nav-link {
+    .buy-iptv {
       font-weight: 700;
-      font-size: 18px;
+      font-size: 20px;
+      color: #ffff00; /* amarelo neon */
+      text-shadow:
+        0 0 6px #ffff00,
+        0 0 12px #ffff00,
+        0 0 18px #ffff00,
+        0 0 24px #ffff00;
       text-decoration: none;
       user-select: none;
       white-space: nowrap;
       text-transform: uppercase;
       cursor: pointer;
       transition: transform 0.2s;
+    }
+    .buy-iptv:hover {
+      transform: scale(1.1);
+    }
+
+    .subscribe-link {
+      font-weight: 700;
+      font-size: 20px;
       color: #ff0033;
       text-shadow:
         0 0 6px #ff0033,
         0 0 12px #ff0033,
         0 0 18px #ff0000,
         0 0 24px #ff0000;
+      text-decoration: none;
+      user-select: none;
+      white-space: nowrap;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-left: 15px;
+      transition: transform 0.2s;
     }
-
-    .nav-link:hover {
+    .subscribe-link:hover {
       transform: scale(1.1);
     }
 
-    /* Alteração para ASSINAR IPTV amarelo neon */
-    .nav-link.assinar-iptv {
-      color: #ffff33;
-      text-shadow:
-        0 0 8px #ffff33,
-        0 0 20px #ffff33,
-        0 0 30px #ffff00,
-        0 0 40px #ffff00,
-        0 0 50px #ffff00,
-        0 0 60px #ffff00;
-      font-weight: 900;
-    }
-
     .container {
-      width: 100%;
-      max-width: 600px;
+      width: 360px;
       display: grid;
       grid-template-columns: 1fr;
       gap: 30px;
       background-color: transparent;
-      padding: 40px 20px 20px 20px;
+      padding: 30px;
       border-radius: 8px;
       position: relative;
       z-index: 10;
       box-sizing: border-box;
-      justify-items: center;
-      user-select: none;
+      margin-top: 40px;
     }
 
     .button {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100px;
-      width: 100%;
+      height: 80px;
       background-color: rgba(0, 0, 0, 0.6);
       color: #fff;
       font-weight: bold;
-      font-size: 32px;
-      text-decoration: none;
+      font-size: 28px;
       border-radius: 12px;
       border: none;
-      transition: background-color 0.3s, transform 0.2s;
       user-select: none;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-      text-align: center;
+      box-shadow: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      user-select: none;
+      text-decoration: none;
     }
 
     .button:hover {
       background-color: rgba(0, 0, 0, 0.8);
-      transform: scale(1.05);
-      cursor: pointer;
     }
 
-    /* Área de texto explicativo grande, largura quase total */
-    .info-section {
-      width: 95vw;
-      max-width: 1100px;
-      background-color: rgba(0,0,0,0.65);
-      border-radius: 20px;
-      padding: 40px 50px;
+    .info-text-container {
+      width: 90vw;
+      max-width: 960px;
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 12px;
+      padding: 30px 40px;
       margin-top: 40px;
+      box-sizing: border-box;
       color: #eee;
-      font-size: 20px;
-      line-height: 1.7;
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
       user-select: text;
     }
 
-    .info-section h2 {
+    .info-text-container h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
       color: #ff0033;
-      font-size: 38px;
-      margin-bottom: 24px;
-      text-align: center;
       text-shadow:
         0 0 8px #ff0033,
         0 0 16px #ff0000;
     }
 
-    /* Copyright no rodapé */
-    footer {
-      margin-top: 50px;
-      padding: 12px 20px;
+    .info-text-container p {
+      font-size: 18px;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    #snowflake {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      max-width: 1100px;
-      color: #aaa;
-      font-size: 16px;
-      text-align: center;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;
+      overflow: hidden;
+    }
+
+    .flake {
+      position: absolute;
+      top: -10px;
+      background: #888;
+      border-radius: 50%;
+      opacity: 0.3;
       user-select: none;
-      text-shadow: 0 0 2px #000;
+      will-change: transform;
+      width: 4px;
+      height: 4px;
+      filter: blur(1px);
     }
 
     /* Responsividade para celulares */
     @media (max-width: 480px) {
       nav {
-        height: 80px;
+        height: 70px;
         padding: 0 16px;
       }
 
       .logo-title h1 {
-        font-size: 52px;
+        font-size: 48px;
         letter-spacing: 8px;
       }
 
-      .nav-links {
-        gap: 12px;
-      }
-
-      .nav-link {
-        font-size: 22px;
+      .buy-iptv, .subscribe-link {
+        font-size: 28px;
       }
 
       .container {
         width: 95vw;
-        padding: 30px 16px 20px 16px;
-        gap: 30px;
+        gap: 25px;
+        padding: 25px;
       }
 
       .button {
+        font-size: 34px;
+        height: 100px;
+        border-radius: 15px;
+      }
+
+      .info-text-container {
+        padding: 20px 15px;
+        font-size: 16px;
+      }
+
+      .info-text-container h2 {
         font-size: 28px;
-        height: 90px;
-      }
-
-      .info-section {
-        font-size: 18px;
-        padding: 30px 20px;
-        margin-top: 50px;
-      }
-
-      .info-section h2 {
-        font-size: 28px;
-      }
-
-      footer {
-        font-size: 14px;
       }
     }
   </style>
@@ -233,34 +236,85 @@
     <div class="logo-title">
       <h1>TROLLTEC</h1>
     </div>
-    <div class="nav-links">
-      <a href="https://trolliptv.com.br" class="nav-link assinar-iptv" target="_blank" rel="noopener noreferrer" title="Assinar IPTV">ASSINAR IPTV</a>
-      <a href="https://youtube.com/TROLLTEC" class="nav-link" target="_blank" rel="noopener noreferrer" title="Inscreva-se no Canal">INSCRIÇÃO NO CANAL</a>
+    <div>
+      <a href="https://trolliptv.com.br" class="buy-iptv" target="_blank" rel="noopener noreferrer" title="Assinar IPTV">
+        ASSINAR IPTV
+      </a>
+      <a href="https://youtube.com/TROLLTEC" class="subscribe-link" target="_blank" rel="noopener noreferrer" title="Inscreva-se no canal">
+        INSCREVA-SE NO CANAL
+      </a>
     </div>
   </nav>
 
   <div class="container">
-    <a href="assinaturas.html" class="button">Assinaturas</a>
-    <a href="jailbreak.html" class="button">Jailbreak iOS</a>
-    <a href="streamings.html" class="button">Streamings</a>
-    <a href="https://chat.whatsapp.com/IKlVfYJIqN4E7AdqB5yk3E" class="button" target="_blank" rel="noopener noreferrer">Grupo WhatsApp</a>
+    <a href="https://www.google.com" class="button" target="_blank" rel="noopener noreferrer">1</a>
+    <a href="https://www.google.com" class="button" target="_blank" rel="noopener noreferrer">2</a>
+    <a href="https://www.google.com" class="button" target="_blank" rel="noopener noreferrer">3</a>
   </div>
 
-  <section class="info-section">
-    <h2>Sobre o Canal TROLLTEC e Informações iOS</h2>
+  <div class="info-text-container">
+    <h2>Sobre o canal Trolltec e informações iOS</h2>
     <p>
-      Bem-vindo ao universo TROLLTEC, onde tecnologia e inovação se encontram para oferecer a você o melhor em conteúdo digital, especialmente focado em iOS e tudo que envolve o ecossistema Apple. Aqui, você vai encontrar informações atualizadas e dicas valiosas sobre assinaturas IPTV, jailbreak, streamings e o funcionamento dos dispositivos iPhone e iPad.<br><br>
+      O universo de assinaturas, jailbreak e iPhone é vasto e cheio de possibilidades para quem deseja explorar o máximo do seu dispositivo Apple. No canal Trolltec, você encontrará conteúdos exclusivos que abordam desde as melhores opções de assinaturas IPTV, dicas essenciais para realizar jailbreak com segurança, até tutoriais e análises para personalizar e otimizar seu iPhone.
 
-      As assinaturas que apresentamos garantem acesso a uma vasta gama de conteúdos exclusivos, com qualidade e estabilidade para você aproveitar seu entretenimento preferido sem interrupções. Nosso canal também é dedicado a ajudar você a entender e dominar o jailbreak no iOS, que permite a personalização profunda do seu dispositivo, liberando recursos que a Apple não oferece nativamente.<br><br>
+      O jailbreak abre portas para ajustes e funcionalidades não disponíveis na Apple Store oficial, permitindo instalar apps, tweaks e temas que deixam seu aparelho único. Além disso, discutimos as melhores práticas para evitar riscos de segurança e manter seu dispositivo estável.
 
-      Além disso, exploramos o mundo dos streamings, trazendo para você as melhores opções de filmes, séries, esportes e muito mais, para que você tenha sempre novidades e conteúdos fresquinhos na palma da mão. Nosso compromisso é oferecer conteúdo relevante, confiável e atualizado, para que você tire o máximo proveito do seu iPhone e do universo tecnológico ao seu redor.<br><br>
+      Assinaturas IPTV são uma forma prática e econômica de acessar conteúdos variados, com canais nacionais e internacionais, filmes e séries, tudo na palma da sua mão. No Trolltec, ensinamos como escolher serviços confiáveis e tirar o melhor proveito dessa tecnologia.
 
-      Junte-se à comunidade TROLLTEC, participe do nosso grupo no WhatsApp e inscreva-se no canal para ficar sempre por dentro das últimas novidades e atualizações. Sua jornada pelo mundo da tecnologia iOS começa aqui!
+      Se você é fã do universo Apple, quer aprender truques, ficar por dentro das novidades e descobrir maneiras de melhorar sua experiência com iOS, este é o lugar certo!
+
+      Junte-se à comunidade Trolltec e fique por dentro de tudo que rola no mundo Apple.
     </p>
-  </section>
+  </div>
 
-  <footer>
-    &copy; 2025 TROLLTEC
+  <div id="snowflake"></div>
+
+  <script>
+    const snowContainer = document.getElementById('snowflake');
+    const flakesCount = 60;
+
+    function randomRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    for (let i = 0; i < flakesCount; i++) {
+      const flake = document.createElement('div');
+      flake.classList.add('flake');
+      flake.style.opacity = (0.1 + Math.random() * 0.3).toFixed(2);
+      flake.style.left = `${Math.random() * 100}vw`;
+      flake.style.width = `${randomRange(2, 5)}px`;
+      flake.style.height = flake.style.width;
+      flake.style.animationDuration = `${randomRange(6, 15)}s`;
+      flake.style.animationDelay = `${Math.random() * 15}s`;
+      snowContainer.appendChild(flake);
+    }
+
+    function animateFlakes() {
+      const flakes = document.querySelectorAll('.flake');
+      flakes.forEach(flake => {
+        let x = parseFloat(flake.style.left);
+        let y = parseFloat(flake.style.top) || 0;
+        let speedY = 0.3;
+        let sway = Math.sin(Date.now() / 700 + x) * 10;
+
+        y += speedY;
+        if (y > window.innerHeight) y = -10;
+
+        flake.style.top = y + 'px';
+        flake.style.left = (x + sway * 0.01) + 'vw';
+      });
+      requestAnimationFrame(animateFlakes);
+    }
+
+    document.querySelectorAll('.flake').forEach(flake => {
+      flake.style.top = `${Math.random() * window.innerHeight}px`;
+    });
+
+    animateFlakes();
+  </script>
+
+  <footer style="width: 100%; text-align: center; margin-top: 40px; padding: 15px 0; background-color: rgba(0,0,0,0.75); color: #aaa; font-size: 16px; user-select:none;">
+    &copy; 2025 Trolltec
   </footer>
 
 </body>
