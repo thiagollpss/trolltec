@@ -42,7 +42,6 @@
       padding: 0 20px;
       z-index: 100;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-      user-select: none;
     }
 
     .logo-title h1 {
@@ -57,8 +56,6 @@
         0 0 50px #ff0000,
         0 0 60px #ff0000;
       letter-spacing: 6px;
-      margin: 0;
-      user-select: none;
       white-space: nowrap;
     }
 
@@ -72,8 +69,6 @@
       font-size: 20px;
       text-transform: uppercase;
       text-decoration: none;
-      cursor: pointer;
-      user-select: none;
       margin-left: 12px;
     }
 
@@ -101,7 +96,6 @@
       gap: 25px;
       margin-top: 50px;
       margin-bottom: 80px;
-      user-select: none;
     }
 
     .button {
@@ -117,8 +111,6 @@
       border-radius: 12px;
       border: none;
       transition: background-color 0.3s, transform 0.2s;
-      box-shadow: none;
-      user-select: none;
     }
 
     .button:hover {
@@ -128,15 +120,12 @@
     }
 
     .info-section {
-      position: relative;
       background-color: rgba(0,0,0,0.85);
-      padding: 40px 40px;
+      padding: 40px;
       color: #eee;
       font-size: 20px;
       line-height: 1.8;
-      user-select: text;
       width: 100%;
-      box-sizing: border-box;
     }
 
     .info-section h2 {
@@ -155,9 +144,52 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      user-select: none;
       width: 100%;
       height: 40px;
+    }
+
+    /* Estilos do diálogo */
+    dialog {
+      border: none;
+      padding: 0;
+      background: transparent;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    .dialog-content {
+      padding: 30px;
+      background-color: #111;
+      color: #fff;
+      border-radius: 12px;
+      min-width: 280px;
+      box-shadow: 0 0 20px #000;
+    }
+
+    .dialog-content h3 {
+      margin-bottom: 20px;
+    }
+
+    .dialog-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background-color: #222;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dialog-btn:hover {
+      background-color: #444;
     }
 
     @media (max-width: 480px) {
@@ -205,55 +237,48 @@
       <h1>TROLLTEC</h1>
     </div>
     <div class="nav-links">
-      <a href="https://youtube.com/@trolltec?si=0Wjpu52Jty9CjzgA" target="_blank" rel="noopener noreferrer" class="subscribe-link">INSCRIÇÃO</a>
+      <a href="https://youtube.com/@trolltec?si=0Wjpu52Jty9CjzgA" target="_blank" class="subscribe-link">INSCRIÇÃO</a>
       <div class="separator"></div>
-      <a href="https://trolliptv.com.br" target="_blank" rel="noopener noreferrer" class="iptv-link">ASSINAR IPTV</a>
+      <a href="https://trolliptv.com.br" target="_blank" class="iptv-link">ASSINAR IPTV</a>
     </div>
   </nav>
 
   <div class="container">
-    <a href="https://www.google.com" class="button" target="_blank">Botão 1</a>
-    <a href="https://www.google.com" class="button" target="_blank">Botão 2</a>
-    <a href="https://www.google.com" class="button" target="_blank">Botão 3</a>
+    <button class="button">Botão 1</button>
+    <button class="button">Botão 2</button>
+    <button class="button">Botão 3</button>
   </div>
 
   <section class="info-section">
     <h2>Tudo sobre iOS, Jailbreak, Assinaturas de Apps e Modificações</h2>
-    <p>
-      O sistema iOS, desenvolvido pela Apple, é uma das plataformas móveis mais avançadas e seguras do mundo. Lançado em 2007 com o primeiro iPhone, ele se destacou por sua interface fluida, simplicidade de uso e integração com o hardware. Desde então, a Apple tem aprimorado o sistema com atualizações constantes, novos recursos e foco em privacidade, tornando o iOS uma referência em estabilidade e segurança.
-    </p>
-    <p>
-      Um dos maiores debates no mundo iOS gira em torno do jailbreak — o processo de desbloqueio do sistema para permitir acesso a arquivos e funções que normalmente são restritas. Com o jailbreak, é possível personalizar ícones, instalar temas, utilizar apps de fora da App Store, modificar o comportamento do sistema, entre outras funcionalidades. Isso atrai usuários avançados, mas também impõe riscos, como instabilidade, falhas de segurança e perda de garantia.
-    </p>
-    <p>
-      Ferramentas como Checkra1n, Unc0ver e Taurine foram populares em diferentes versões do iOS, permitindo diferentes níveis de desbloqueio. No entanto, a Apple tem fechado as brechas rapidamente, tornando cada vez mais difícil manter o jailbreak funcional, especialmente em versões recentes do sistema.
-    </p>
-    <p>
-      Para quem busca liberdade sem jailbreak, surgiram soluções alternativas como AltStore, TrollStore (em versões específicas) e outras formas de instalação de apps via arquivos .IPA. Essas ferramentas permitem assinar apps personalizados — como versões modificadas do WhatsApp, TikTok, YouTube (com funções extras como download de vídeos) — sem passar pela App Store.
-    </p>
-    <p>
-      As assinaturas de apps são feitas por meio de certificados empresariais ou perfis MDM. Embora funcionem bem, esses métodos têm limitações: os certificados costumam expirar, apps podem parar de abrir de uma hora para outra, e em muitos casos, é necessário reinstalar os apps após 7 dias (em contas gratuitas). Por isso, muitos usuários utilizam serviços pagos que prometem estabilidade maior.
-    </p>
-    <p>
-      No mundo das modificações visuais, mesmo sem jailbreak, o iOS permite um nível básico de personalização. É possível mudar ícones usando os Atalhos, aplicar wallpapers animados, organizar a tela inicial com widgets interativos e até simular launchers. Com criatividade, dá para deixar o iPhone com um visual único, mesmo dentro das limitações impostas pela Apple.
-    </p>
-    <p>
-      O iOS também se destaca pela integração com outros dispositivos Apple. A funcionalidade "Continuidade" permite copiar e colar entre iPhone e Mac, atender ligações no computador, desbloquear o Mac com o Apple Watch e iniciar tarefas em um dispositivo e continuar em outro. Essa fluidez é um dos grandes diferenciais do ecossistema Apple.
-    </p>
-    <p>
-      Em relação à privacidade, o iOS implementa recursos como o bloqueio de rastreamento entre apps, relatórios de atividade, permissões detalhadas de localização e uso de câmera e microfone, além de segurança avançada com biometria, chip Secure Enclave e atualizações frequentes.
-    </p>
-    <p>
-      O futuro do iOS é promissor. A Apple continua investindo em inteligência artificial no dispositivo, integração com o Apple Vision Pro, melhorias em widgets, novo design de tela de bloqueio, ajustes na Central de Controle e um número cada vez maior de recursos que dispensam apps de terceiros.
-    </p>
-    <p>
-      Se você é entusiasta do iOS, vale a pena explorar todas as possibilidades — com ou sem jailbreak. O canal Trolltec traz tutoriais completos, dicas, notícias, atualizações e guias passo a passo para quem quer dominar o sistema da Apple de verdade. Fique ligado!
-    </p>
+    <p>O sistema iOS é conhecido por sua segurança, performance e integração com o ecossistema Apple. Com ele, usuários têm acesso a atualizações frequentes, controle de privacidade e excelente otimização com o hardware dos dispositivos...</p>
+    <!-- Conteúdo longo continua aqui -->
   </section>
 
   <footer>
     &copy; 2025 Trolltec
   </footer>
+
+  <!-- Diálogo personalizado -->
+  <dialog id="customDialog">
+    <div class="dialog-content">
+      <h3>Escolha uma opção</h3>
+      <button class="dialog-btn">Opção A</button>
+      <button class="dialog-btn">Opção B</button>
+      <button class="dialog-btn" onclick="document.getElementById('customDialog').close();">Fechar</button>
+    </div>
+  </dialog>
+
+  <script>
+    const dialog = document.getElementById('customDialog');
+    const buttons = document.querySelectorAll('.button');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        dialog.showModal();
+      });
+    });
+  </script>
 
 </body>
 </html>
