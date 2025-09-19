@@ -215,6 +215,7 @@
       color: #fff;
     }
 
+    /* === Modificação na info-section para espaçamento e estilo melhorado === */
     .info-section {
       position: fixed;
       bottom: 60px;
@@ -222,27 +223,32 @@
       transform: translateX(-50%);
       max-width: 360px;
       width: 90vw;
-      background-color: rgba(0,0,0,0.85);
-      padding: 20px 25px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 25px 30px;
       box-sizing: border-box;
       color: #eee;
       font-size: 18px;
       line-height: 1.6;
-      border-radius: 12px;
+      border-radius: 16px;
+      box-shadow: 0 0 12px rgba(255, 0, 51, 0.5);
       user-select: text;
       overflow: hidden; /* remove scroll */
       max-height: 280px;
       text-align: justify;
+      margin-top: 20px; /* separa do container de botões */
+      /* removi overflow-y para evitar scroll */
     }
 
     .info-section h2 {
       color: #ff0033;
-      margin-bottom: 16px;
-      font-size: 24px;
+      margin-bottom: 20px;
+      font-size: 26px;
       text-shadow:
         0 0 6px #ff0033,
         0 0 12px #ff0000;
       user-select: text;
+      text-align: center;
+      font-weight: 800;
     }
 
     footer {
@@ -317,7 +323,8 @@
         max-width: 95vw;
         font-size: 16px;
         max-height: 240px;
-        padding: 15px 20px;
+        padding: 20px 25px;
+        margin-top: 20px;
       }
     }
   </style>
@@ -346,60 +353,27 @@
       Bem-vindo ao universo Trolltec, onde tecnologia e inovação se encontram para transformar sua experiência com dispositivos iOS. Nosso canal aborda tudo sobre assinaturas, jailbreak, personalização e truques para iPhone, iPad e outros gadgets Apple.
     </p>
     <p>
-      Descubra tutoriais detalhados para liberar todo o potencial do seu dispositivo, entender os riscos e benefícios do jailbreak, e aproveitar ao máximo os serviços de IPTV e aplicativos exclusivos. Além disso, trazemos notícias e atualizações do mundo Apple, para que você esteja sempre informado.
-    </p>
-    <p>
-      Se você é apaixonado por tecnologia, quer otimizar seu uso do iOS ou simplesmente ficar por dentro das últimas novidades, Trolltec é seu canal de referência. Inscreva-se para não perder nenhum conteúdo e participe da comunidade.
+      Descubra tutoriais detalhados para liberar todo o potencial do seu dispositivo, além de análises, dicas e novidades que vão manter você sempre atualizado.
     </p>
   </section>
 
   <footer>
-    &copy; 2025 Trolltec
+    © 2025 Trolltec - Todos os direitos reservados.
   </footer>
 
-  <!-- Dialogs -->
-  <dialog id="dialog1" role="dialog" aria-modal="true" aria-labelledby="dialog1-title">
-    <h3 id="dialog1-title">Diálogo 1</h3>
-    <div class="dialog-buttons">
-      <button>Opção A</button>
-      <button>Opção B</button>
-      <button>Opção C</button>
-    </div>
-    <button class="dialog-close" onclick="document.getElementById('dialog1').close()">Fechar</button>
-  </dialog>
-
-  <dialog id="dialog2" role="dialog" aria-modal="true" aria-labelledby="dialog2-title">
-    <h3 id="dialog2-title">Diálogo 2</h3>
-    <div class="dialog-buttons">
-      <button>Opção X</button>
-      <button>Opção Y</button>
-      <button>Opção Z</button>
-    </div>
-    <button class="dialog-close" onclick="document.getElementById('dialog2').close()">Fechar</button>
-  </dialog>
-
-  <dialog id="dialog3" role="dialog" aria-modal="true" aria-labelledby="dialog3-title">
-    <h3 id="dialog3-title">Diálogo 3</h3>
-    <div class="dialog-buttons">
-      <button>Opção 1</button>
-      <button>Opção 2</button>
-      <button>Opção 3</button>
-    </div>
-    <button class="dialog-close" onclick="document.getElementById('dialog3').close()">Fechar</button>
-  </dialog>
-
   <script>
-    // Abrir diálogos ao clicar nos botões
-    document.getElementById('btn1').addEventListener('click', () => {
-      document.getElementById('dialog1').showModal();
+    // Event listeners para os botões, caso queira adicionar funcionalidades
+    document.getElementById('btn1').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('Botão 1 clicado!');
     });
-
-    document.getElementById('btn2').addEventListener('click', () => {
-      document.getElementById('dialog2').showModal();
+    document.getElementById('btn2').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('Botão 2 clicado!');
     });
-
-    document.getElementById('btn3').addEventListener('click', () => {
-      document.getElementById('dialog3').showModal();
+    document.getElementById('btn3').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('Botão 3 clicado!');
     });
   </script>
 
