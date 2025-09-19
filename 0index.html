@@ -9,7 +9,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       background-image: url('a1f5c41f-69bb-4274-b9b7-99bc90883c78.png');
       background-size: cover;
@@ -27,7 +26,6 @@
       overflow-x: hidden;
       overflow-y: auto;
     }
-
     nav {
       position: fixed;
       top: 0;
@@ -44,7 +42,6 @@
       user-select: none;
       font-size: 18px;
     }
-
     .logo-title h1 {
       font-size: 36px;
       font-weight: 900;
@@ -62,13 +59,11 @@
       white-space: nowrap;
       cursor: pointer;
     }
-
     .nav-links {
       display: flex;
       align-items: center;
       gap: 20px;
     }
-
     .nav-links a {
       font-weight: 700;
       font-size: 18px;
@@ -80,7 +75,6 @@
       white-space: nowrap;
       position: relative;
     }
-
     .nav-links a:not(:last-child)::after {
       content: '';
       position: absolute;
@@ -92,31 +86,28 @@
       background-color: #fff;
       opacity: 0.5;
     }
-
     .subscribe-link {
       color: #ff0000; /* vermelho */
     }
-
     .iptv-link {
       color: #fff; /* branco */
       text-decoration: line-through;
     }
-
     .container {
       width: 360px;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 25px;
+      gap: 35px; /* aumentei espaçamento */
       margin-top: 50px;
-      margin-bottom: 300px; /* espaço para o texto fixo embaixo */
+      margin-bottom: 320px; /* maior margem pra texto fixo */
       user-select: none;
     }
-
     .button {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 80px;
+      height: 90px; /* aumentei altura */
+      padding: 0 20px; /* padding horizontal */
       background-color: rgba(0, 0, 0, 0.5);
       color: #fff;
       font-weight: bold;
@@ -128,13 +119,11 @@
       box-shadow: none;
       user-select: none;
     }
-
     .button:hover {
       background-color: rgba(0, 0, 0, 0.8);
       transform: scale(1.05);
       cursor: pointer;
     }
-
     /* Dialog Styles */
     dialog {
       position: fixed;
@@ -152,11 +141,9 @@
       z-index: 200;
       user-select: text;
     }
-
     dialog::backdrop {
       background-color: rgba(0, 0, 0, 0.6);
     }
-
     dialog h3 {
       margin-bottom: 18px;
       color: #ff0033;
@@ -167,13 +154,11 @@
         0 0 6px #ff0033,
         0 0 12px #ff0000;
     }
-
     .dialog-buttons {
       display: flex;
       flex-direction: column;
       gap: 14px;
     }
-
     .dialog-buttons button {
       background: rgba(255 255 255 / 0.15);
       backdrop-filter: blur(10px);
@@ -190,12 +175,10 @@
       width: 100%;
       box-shadow: 0 4px 6px rgba(255 255 255 / 0.2);
     }
-
     .dialog-buttons button:hover {
       background: rgba(255 255 255 / 0.3);
       color: #ff0033;
     }
-
     .dialog-close {
       margin-top: 20px;
       background: transparent;
@@ -209,13 +192,10 @@
       user-select: none;
       transition: background-color 0.3s, color 0.3s;
     }
-
     .dialog-close:hover {
       background-color: #ff0033;
       color: #fff;
     }
-
-    /* === Modificação na info-section para espaçamento e estilo melhorado === */
     .info-section {
       position: fixed;
       bottom: 60px;
@@ -223,34 +203,27 @@
       transform: translateX(-50%);
       max-width: 360px;
       width: 90vw;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 25px 30px;
+      background-color: rgba(0,0,0,0.85);
+      padding: 20px 25px;
       box-sizing: border-box;
       color: #eee;
       font-size: 18px;
       line-height: 1.6;
-      border-radius: 16px;
-      box-shadow: 0 0 12px rgba(255, 0, 51, 0.5);
+      border-radius: 12px;
       user-select: text;
       overflow: hidden; /* remove scroll */
       max-height: 280px;
       text-align: justify;
-      margin-top: 20px; /* separa do container de botões */
-      /* removi overflow-y para evitar scroll */
     }
-
     .info-section h2 {
       color: #ff0033;
-      margin-bottom: 20px;
-      font-size: 26px;
+      margin-bottom: 16px;
+      font-size: 24px;
       text-shadow:
         0 0 6px #ff0033,
         0 0 12px #ff0000;
       user-select: text;
-      text-align: center;
-      font-weight: 800;
     }
-
     footer {
       position: fixed;
       bottom: 0;
@@ -266,7 +239,6 @@
       user-select: none;
       z-index: 150;
     }
-
     /* Responsividade para celulares */
     @media (max-width: 480px) {
       nav {
@@ -274,63 +246,52 @@
         padding: 0 12px;
         font-size: 16px;
       }
-
       .logo-title h1 {
         font-size: 32px;
         letter-spacing: 4px;
       }
-
       .nav-links {
         gap: 12px;
       }
-
       .nav-links a {
         font-size: 14px;
         padding: 0 6px;
       }
-
       .nav-links a:not(:last-child)::after {
         height: 14px;
         opacity: 0.4;
       }
-
       .container {
         width: 95vw;
-        gap: 20px;
+        gap: 25px; /* menor espaçamento pra celular */
       }
-
       .button {
         font-size: 20px;
-        height: 60px;
+        height: 70px; /* menor altura no celular */
+        padding: 0 15px;
       }
-
       dialog {
         max-width: 280px;
         padding: 15px 20px;
       }
-
       dialog h3 {
         font-size: 20px;
         margin-bottom: 14px;
       }
-
       .dialog-buttons button {
         font-size: 16px;
         padding: 12px 0;
       }
-
       .info-section {
         max-width: 95vw;
         font-size: 16px;
         max-height: 240px;
-        padding: 20px 25px;
-        margin-top: 20px;
+        padding: 15px 20px;
       }
     }
   </style>
 </head>
 <body>
-
   <nav>
     <div class="logo-title" onclick="location.reload()">
       <h1>TROLLTEC</h1>
@@ -340,42 +301,67 @@
       <a href="https://trolliptv.com.br" target="_blank" rel="noopener noreferrer" class="iptv-link">ASSINAR IPTV</a>
     </div>
   </nav>
-
   <div class="container">
     <a href="#" class="button" id="btn1">Botão 1</a>
     <a href="#" class="button" id="btn2">Botão 2</a>
     <a href="#" class="button" id="btn3">Botão 3</a>
   </div>
-
   <section class="info-section" aria-live="polite">
     <h2>Sobre o canal Trolltec e informações iOS</h2>
     <p>
       Bem-vindo ao universo Trolltec, onde tecnologia e inovação se encontram para transformar sua experiência com dispositivos iOS. Nosso canal aborda tudo sobre assinaturas, jailbreak, personalização e truques para iPhone, iPad e outros gadgets Apple.
     </p>
     <p>
-      Descubra tutoriais detalhados para liberar todo o potencial do seu dispositivo, além de análises, dicas e novidades que vão manter você sempre atualizado.
+      Descubra tutoriais detalhados para liberar todo o potencial do seu dispositivo, entender os riscos e benefícios do jailbreak, e aproveitar ao máximo os serviços de IPTV e aplicativos exclusivos. Além disso, trazemos notícias e atualizações do mundo Apple, para que você esteja sempre informado.
+    </p>
+    <p>
+      Se você é apaixonado por tecnologia, quer otimizar seu uso do iOS ou simplesmente ficar por dentro das últimas novidades, Trolltec é seu canal de referência. Inscreva-se para não perder nenhum conteúdo e participe da comunidade.
     </p>
   </section>
-
   <footer>
-    © 2025 Trolltec - Todos os direitos reservados.
+    &copy; 2025 Trolltec
   </footer>
 
+  <!-- Dialogs -->
+  <dialog id="dialog1" role="dialog" aria-modal="true" aria-labelledby="dialog1-title">
+    <h3 id="dialog1-title">Diálogo 1</h3>
+    <div class="dialog-buttons">
+      <button>Opção A</button>
+      <button>Opção B</button>
+      <button>Opção C</button>
+    </div>
+    <button class="dialog-close" onclick="document.getElementById('dialog1').close()">Fechar</button>
+  </dialog>
+  <dialog id="dialog2" role="dialog" aria-modal="true" aria-labelledby="dialog2-title">
+    <h3 id="dialog2-title">Diálogo 2</h3>
+    <div class="dialog-buttons">
+      <button>Opção X</button>
+      <button>Opção Y</button>
+      <button>Opção Z</button>
+    </div>
+    <button class="dialog-close" onclick="document.getElementById('dialog2').close()">Fechar</button>
+  </dialog>
+  <dialog id="dialog3" role="dialog" aria-modal="true" aria-labelledby="dialog3-title">
+    <h3 id="dialog3-title">Diálogo 3</h3>
+    <div class="dialog-buttons">
+      <button>Opção 1</button>
+      <button>Opção 2</button>
+      <button>Opção 3</button>
+    </div>
+    <button class="dialog-close" onclick="document.getElementById('dialog3').close()">Fechar</button>
+  </dialog>
+
   <script>
-    // Event listeners para os botões, caso queira adicionar funcionalidades
-    document.getElementById('btn1').addEventListener('click', function(e) {
-      e.preventDefault();
-      alert('Botão 1 clicado!');
+    // Abrir diálogos ao clicar nos botões
+    document.getElementById('btn1').addEventListener('click', () => {
+      document.getElementById('dialog1').showModal();
     });
-    document.getElementById('btn2').addEventListener('click', function(e) {
-      e.preventDefault();
-      alert('Botão 2 clicado!');
+    document.getElementById('btn2').addEventListener('click', () => {
+      document.getElementById('dialog2').showModal();
     });
-    document.getElementById('btn3').addEventListener('click', function(e) {
-      e.preventDefault();
-      alert('Botão 3 clicado!');
+    document.getElementById('btn3').addEventListener('click', () => {
+      document.getElementById('dialog3').showModal();
     });
   </script>
-
 </body>
 </html>
